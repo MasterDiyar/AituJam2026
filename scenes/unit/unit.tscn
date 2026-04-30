@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cujvlip6ybnu"]
+
+[ext_resource type="Script" uid="uid://cln48h1kijmxa" path="res://scripts/unit/Unit.cs" id="1_fmv3f"]
+[ext_resource type="PackedScene" uid="uid://l7lybil58ucm" path="res://scenes/unit/unit_body.tscn" id="2_fvc8g"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fvc8g"]
+
+[node name="Unit" type="CharacterBody2D" unique_id=1833189167]
+script = ExtResource("1_fmv3f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1235134425]
+shape = SubResource("CapsuleShape2D_fvc8g")
+
+[node name="UnitBody" parent="." unique_id=75413389 instance=ExtResource("2_fvc8g")]

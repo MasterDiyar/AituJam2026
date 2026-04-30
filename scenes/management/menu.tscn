@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://d2xm4ij02t4h7"]
+
+[ext_resource type="Script" uid="uid://qykrrfi2iu6o" path="res://scripts/ui/Menu.cs" id="1_ca7bl"]
+
+[node name="Menu" type="Control" unique_id=51166997 node_paths=PackedStringArray("PlayButton")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ca7bl")
+PlayButton = NodePath("Button")
+
+[node name="Button" type="Button" parent="." unique_id=1613786208]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 78.0
+offset_right = 197.0
+offset_bottom = 114.0
+text = "Play
+"
