@@ -9,7 +9,7 @@ corner_radius_top_right = 50
 corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 
-[node name="PauseUI" type="Control" unique_id=1834776443]
+[node name="PauseUI" type="Control" unique_id=1834776443 node_paths=PackedStringArray("returnButton", "soundButton", "exitButton")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -17,6 +17,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_xt3ok")
+returnButton = NodePath("pausePanel/MarginContainer/VBoxContainer/Button")
+soundButton = NodePath("pausePanel/MarginContainer/VBoxContainer/Button3")
+exitButton = NodePath("pausePanel/MarginContainer/VBoxContainer/Button4")
 
 [node name="pausePanel" type="Panel" parent="." unique_id=1497496028]
 layout_mode = 1

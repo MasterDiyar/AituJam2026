@@ -2,5 +2,14 @@
 
 [ext_resource type="Script" uid="uid://d7lekg4adwmq" path="res://scripts/unit/UnitController.cs" id="1_2t2ne"]
 
-[node name="UnitControl" type="Node2D" unique_id=329941268]
+[sub_resource type="CircleShape2D" id="CircleShape2D_2t2ne"]
+radius = 200.0
+
+[node name="UnitControl" type="Node2D" unique_id=329941268 node_paths=PackedStringArray("Eyes")]
 script = ExtResource("1_2t2ne")
+Eyes = NodePath("Area2D")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2008799096]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=687391423]
+shape = SubResource("CircleShape2D_2t2ne")

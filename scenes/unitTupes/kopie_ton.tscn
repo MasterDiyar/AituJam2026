@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://bwlhskiyuevmb"]
+
+[ext_resource type="PackedScene" uid="uid://cujvlip6ybnu" path="res://scenes/unit/unit.tscn" id="1_nibs2"]
+[ext_resource type="Script" uid="uid://c7dq7dbj701rh" path="res://scripts/resources/AboutResource.cs" id="2_73kk0"]
+[ext_resource type="Texture2D" uid="uid://bp6s5r6w8kwpe" path="res://assets/texture/mobs/torso.png" id="3_fi3vy"]
+[ext_resource type="Texture2D" uid="uid://dwjow71o3jsyo" path="res://assets/texture/mobs/colchuga.png" id="4_kxjhe"]
+[ext_resource type="Texture2D" uid="uid://dl6g5rfvkrai" path="res://assets/texture/mobs/Head1.png" id="5_yrqmd"]
+[ext_resource type="Texture2D" uid="uid://dxv3w7ty3e62w" path="res://assets/texture/mobs/pike.png" id="6_4e7lp"]
+[ext_resource type="Script" uid="uid://ds3wo1i33pg8r" path="res://scripts/resources/UnitResource.cs" id="7_vnl2r"]
+[ext_resource type="PackedScene" uid="uid://ye5518wgslml" path="res://scenes/unit/bullet.tscn" id="8_4e7lp"]
+[ext_resource type="Texture2D" uid="uid://ly2itbp20owp" path="res://assets/texture/mobs/PikeSwing.png" id="9_vnl2r"]
+[ext_resource type="Script" uid="uid://c4ypseweqfmmv" path="res://scripts/resources/BulletResource.cs" id="10_7q3d7"]
+[ext_resource type="Script" uid="uid://bpfif762meayr" path="res://scripts/resources/WeaponResource.cs" id="11_10hun"]
+
+[sub_resource type="Resource" id="Resource_7q3d7"]
+script = ExtResource("2_73kk0")
+MaxHp = 90.0
+MaxArmor = 20.0
+MaxAbsorbtion = 40.0
+DefaultDamage = 90.0
+KritChance = 0.5
+KritDamage = 20.0
+MaxSpeed = 20.0
+metadata/_custom_type_script = "uid://c7dq7dbj701rh"
+
+[sub_resource type="Resource" id="Resource_10hun"]
+script = ExtResource("7_vnl2r")
+Body = ExtResource("3_fi3vy")
+Cloth = ExtResource("4_kxjhe")
+Head = ExtResource("5_yrqmd")
+Weapon = ExtResource("6_4e7lp")
+metadata/_custom_type_script = "uid://ds3wo1i33pg8r"
+
+[sub_resource type="Resource" id="Resource_heane"]
+script = ExtResource("10_7q3d7")
+BulletResourceScene = ExtResource("8_4e7lp")
+Icon = ExtResource("9_vnl2r")
+Speed = 10.0
+Damage = 5.0
+LifeTime = 0.785
+metadata/_custom_type_script = "uid://c4ypseweqfmmv"
+
+[sub_resource type="Resource" id="Resource_38a7r"]
+script = ExtResource("11_10hun")
+Bullet = SubResource("Resource_heane")
+Damage = 5.0
+AttackSpeed = 10.0
+Count = 1
+AttackDistance = 80.0
+metadata/_custom_type_script = "uid://bpfif762meayr"
+
+[node name="KopieTon" unique_id=1833189167 instance=ExtResource("1_nibs2")]
+Stats = SubResource("Resource_7q3d7")
+
+[node name="UnitBody" parent="." index="1" unique_id=75413389]
+uResource = SubResource("Resource_10hun")
+
+[node name="Weapon" parent="." index="3" unique_id=2024550278 node_paths=PackedStringArray("Parent")]
+Parent = NodePath("..")
+WeaponInstance = SubResource("Resource_38a7r")

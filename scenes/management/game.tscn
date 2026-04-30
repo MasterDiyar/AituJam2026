@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://da2361ip7ydte"]
 
 [ext_resource type="Script" uid="uid://2m4fhvk4n8bv" path="res://scripts/game/Game.cs" id="1_6ugtm"]
+[ext_resource type="PackedScene" uid="uid://c6o4o7vvuf4ap" path="res://scenes/ui/pause_ui.tscn" id="2_er5mi"]
 
 [node name="Game" type="Node2D" unique_id=1955143492]
 script = ExtResource("1_6ugtm")
@@ -8,5 +9,7 @@ script = ExtResource("1_6ugtm")
 [node name="Pausable" type="Node2D" parent="." unique_id=1783724853]
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=1540372164]
+
+[node name="PauseUI" parent="UI" unique_id=1834776443 instance=ExtResource("2_er5mi")]
 
 [node name="NoDestroy" type="Node2D" parent="." unique_id=2055974417]

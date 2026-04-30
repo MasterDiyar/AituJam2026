@@ -1,8 +1,14 @@
 [gd_scene format=3 uid="uid://ye5518wgslml"]
 
+[ext_resource type="Script" uid="uid://c6ssf02wfkc24" path="res://scripts/weapons/Bullet.cs" id="1_bwdna"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cbxnk"]
 
-[node name="bullet" type="Area2D" unique_id=272352768]
+[node name="bullet" type="Area2D" unique_id=272352768 node_paths=PackedStringArray("BulletSprite")]
+script = ExtResource("1_bwdna")
+BulletSprite = NodePath("Sprite2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1159379052]
 shape = SubResource("RectangleShape2D_cbxnk")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1451587912]

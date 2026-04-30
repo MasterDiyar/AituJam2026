@@ -2,11 +2,13 @@
 [GlobalClass]
 public partial class WeaponResource : Resource
 {
-    [Export] private BulletResource Bullet;
+    [Export] public BulletResource Bullet;
     
-    [Export] float Damage;
-    [Export] float AttackSpeed;
-    [Export] int Count;
-    [Export] private bool isClose;
+    [Export] public float Damage;
+    [Export] public float AttackSpeed;
+    [Export] public int Count;
+    [Export] public bool isClose;
+    [Export] public float AttackDistance;
+    [Export] public float BetWeenAngle;
 
 }

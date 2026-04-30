@@ -8,6 +8,7 @@ public partial class GameManager : Node
 	public Node2D Pausable, NoDestroy;
 	public PauseUi PauseUI;
 	public Game Game;
+	public CanvasLayer UI;
 	
 	bool isPaused = false;
 	
