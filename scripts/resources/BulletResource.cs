@@ -18,5 +18,6 @@ public partial class BulletResource :  Resource
         bullet.Consume = Consume;
         bullet.Rotation += SpawnAngle;
         bullet.BulletSprite.Texture = Icon;
+        bullet.SpawnAngle = SpawnAngle;
     }
 }

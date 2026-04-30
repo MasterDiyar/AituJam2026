@@ -8,6 +8,7 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fvc8g"]
 
 [node name="Unit" type="CharacterBody2D" unique_id=1833189167 node_paths=PackedStringArray("Body", "Controller", "Weapon")]
+input_pickable = true
 script = ExtResource("1_fmv3f")
 Body = NodePath("UnitBody")
 Controller = NodePath("UnitControl")

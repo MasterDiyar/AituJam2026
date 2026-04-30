@@ -16,7 +16,7 @@
 script = ExtResource("2_73kk0")
 MaxHp = 90.0
 MaxArmor = 20.0
-MaxAbsorbtion = 40.0
+MaxAbsorbtion = 1.0
 DefaultDamage = 90.0
 KritChance = 0.5
 KritDamage = 20.0
@@ -35,9 +35,10 @@ metadata/_custom_type_script = "uid://ds3wo1i33pg8r"
 script = ExtResource("10_7q3d7")
 BulletResourceScene = ExtResource("8_4e7lp")
 Icon = ExtResource("9_vnl2r")
-Speed = 10.0
+Speed = 30.0
 Damage = 5.0
 LifeTime = 0.785
+SpawnAngle = 0.785
 metadata/_custom_type_script = "uid://c4ypseweqfmmv"
 
 [sub_resource type="Resource" id="Resource_38a7r"]

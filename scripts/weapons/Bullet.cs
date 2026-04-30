@@ -17,7 +17,7 @@ public partial class Bullet : Area2D
 	public override void _Process(double delta)
 	{
 		var dt = (float)delta;
-		var dir = Vector2.FromAngle(Rotation).Normalized();
+		var dir = Vector2.FromAngle(Rotation - SpawnAngle).Normalized();
 		Position += dir * Speed * dt;
 		LifeTime -= dt;
 		if (LifeTime <= 0)

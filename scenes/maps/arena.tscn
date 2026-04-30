@@ -7,6 +7,18 @@
 
 [node name="TestControl" parent="." unique_id=273127478 node_paths=PackedStringArray("units") instance=ExtResource("1_uv8r2")]
 units = [NodePath("../KopieTon"), NodePath("../KopieTon2"), NodePath("../KopieTon3")]
+actions = Array[int]([3, 3, 1, 1])
+timePerAction = 2.0
+
+[node name="TestControl2" parent="." unique_id=458462960 node_paths=PackedStringArray("units") instance=ExtResource("1_uv8r2")]
+offset_left = -15.965332
+offset_top = -468.18518
+offset_right = -15.965332
+offset_bottom = -468.18518
+team = 1
+units = [NodePath("../KopieTon4")]
+actions = Array[int]([3, 1, 4])
+timePerAction = 2.0
 
 [node name="KopieTon" parent="." unique_id=1833189167 instance=ExtResource("2_uv8r2")]
 position = Vector2(572, 335)

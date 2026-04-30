@@ -8,7 +8,6 @@ public partial class Unit : CharacterBody2D, IDamagable
     [Export] public UnitBody Body;
     [Export] public AboutResource Stats;
     [Export] public Faction UnitFaction { get; set; }
-    [Export] public float Health, MaxHealth;
     [Export] public UnitController Controller;
     [Export] public Weapon Weapon;
 
@@ -19,6 +18,14 @@ public partial class Unit : CharacterBody2D, IDamagable
     public override void _Ready()
     {
         Stats.SetStats(this);
+        InputEvent += OnInputEvent;
+    }
+
+    private void OnInputEvent(Node viewport, InputEvent @event, long shapeIdx)
+    {
+        if (@event.IsActionPressed("lm"))
+            GD.Print("Hp: " + Hp);
+        
     }
 
     public void TakeDamage(float damage)
@@ -26,10 +33,13 @@ public partial class Unit : CharacterBody2D, IDamagable
         var armorMultiplier = 100f / (100f + Mathf.Max(Armor, 0));
         damage -= Absorbtion;
         Hp -= damage * armorMultiplier;
+        GD.Print("Hp: " + Hp);
+        
+        if (Hp <= 0) QueueFree();
     }
 
     public void Heal(float heal)
     {
-        throw new System.NotImplementedException();
+        Hp += heal;
     }
 }
