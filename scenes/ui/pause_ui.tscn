@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://c6o4o7vvuf4ap"]
+
+[ext_resource type="Script" uid="uid://cyfkq6qle6emb" path="res://scripts/ui/PauseUi.cs" id="1_xt3ok"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j33sd"]
+bg_color = Color(0.6, 0.6, 0.6, 0.2509804)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[node name="PauseUI" type="Control" unique_id=1834776443]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xt3ok")
+
+[node name="pausePanel" type="Panel" parent="." unique_id=1497496028]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.39800003
+anchor_top = 0.30200002
+anchor_right = 0.59800005
+anchor_bottom = 0.698
+offset_left = 0.5039673
+offset_top = 0.3039856
+offset_right = 0.10394287
+offset_bottom = -0.3040161
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_j33sd")
+
+[node name="MarginContainer" type="MarginContainer" parent="pausePanel" unique_id=397706385]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="pausePanel/MarginContainer" unique_id=451150785]
+layout_mode = 2
+alignment = 1
+
+[node name="Button" type="Button" parent="pausePanel/MarginContainer/VBoxContainer" unique_id=337308394]
+layout_mode = 2
+text = "Rejoin"
+
+[node name="Button3" type="Button" parent="pausePanel/MarginContainer/VBoxContainer" unique_id=234193809]
+layout_mode = 2
+text = "OffSound"
+
+[node name="Button4" type="Button" parent="pausePanel/MarginContainer/VBoxContainer" unique_id=1208314977]
+layout_mode = 2
+text = "Quit"
