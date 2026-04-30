@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://cbm3er54siuxb"]
+
+[ext_resource type="Script" uid="uid://d1bti5w7lwj8q" path="res://scripts/unit/Deck.cs" id="1_fateh"]
+[ext_resource type="Script" uid="uid://bto1pmip21pjv" path="res://scripts/test/TestControll.cs" id="2_6jk0j"]
+
+[node name="TestControl" type="Control" unique_id=273127478 node_paths=PackedStringArray("units")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fateh")
+units = []
+
+[node name="Button" type="Button" parent="." unique_id=912218944]
+layout_mode = 0
+offset_left = 84.0
+offset_top = 565.0
+offset_right = 167.0
+offset_bottom = 627.0
+text = "forward"
+
+[node name="Button2" type="Button" parent="." unique_id=402155163]
+layout_mode = 0
+offset_left = 177.0
+offset_top = 567.0
+offset_right = 260.0
+offset_bottom = 629.0
+text = "backward"
+
+[node name="Button3" type="Button" parent="." unique_id=1617769280]
+layout_mode = 0
+offset_left = 274.0
+offset_top = 567.0
+offset_right = 357.0
+offset_bottom = 629.0
+text = "attack"
+
+[node name="Button4" type="Button" parent="." unique_id=1867717986]
+layout_mode = 0
+offset_left = 372.0
+offset_top = 569.0
+offset_right = 455.0
+offset_bottom = 631.0
+text = "heal"
+
+[node name="test" type="Node" parent="." unique_id=55057920 node_paths=PackedStringArray("forward", "backward", "attack", "heal")]
+script = ExtResource("2_6jk0j")
+forward = NodePath("../Button")
+backward = NodePath("../Button2")
+attack = NodePath("../Button3")
+heal = NodePath("../Button4")

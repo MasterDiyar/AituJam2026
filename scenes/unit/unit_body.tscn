@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bp6s5r6w8kwpe" path="res://assets/texture/mobs/torso.png" id="2_qfj1v"]
 [ext_resource type="Texture2D" uid="uid://332k0j47mrup" path="res://assets/texture/mobs/inquizitor1.png" id="3_52ksc"]
 [ext_resource type="Texture2D" uid="uid://b3r7kmsis08vh" path="res://assets/texture/mobs/Head2.png" id="4_ekwg2"]
+[ext_resource type="Texture2D" uid="uid://dxv3w7ty3e62w" path="res://assets/texture/mobs/pike.png" id="5_52ksc"]
 [ext_resource type="Script" uid="uid://ds3wo1i33pg8r" path="res://scripts/resources/UnitResource.cs" id="5_d3ups"]
 
 [sub_resource type="Resource" id="Resource_7sqsw"]
@@ -11,14 +12,16 @@ script = ExtResource("5_d3ups")
 Body = ExtResource("2_qfj1v")
 Cloth = ExtResource("3_52ksc")
 Head = ExtResource("4_ekwg2")
+Weapon = ExtResource("5_52ksc")
 metadata/_custom_type_script = "uid://ds3wo1i33pg8r"
 
-[node name="UnitBody" type="Node2D" unique_id=75413389 node_paths=PackedStringArray("Body", "Cloth", "Head", "Weapon", "Secondary")]
+[node name="UnitBody" type="Node2D" unique_id=75413389 node_paths=PackedStringArray("Body", "Cloth", "Head", "Hat", "Weapon", "Secondary")]
 texture_filter = 3
 script = ExtResource("1_cjtb0")
 Body = NodePath("Body")
 Cloth = NodePath("Body/Cloth")
 Head = NodePath("Head")
+Hat = NodePath("Head/Hat")
 Weapon = NodePath("Weapon")
 Secondary = NodePath("Secondary")
 uResource = SubResource("Resource_7sqsw")
@@ -38,6 +41,3 @@ position = Vector2(0, 20)
 [node name="Secondary" type="Sprite2D" parent="." unique_id=1924156845]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1707489671]
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1022171133]
-zoom = Vector2(2, 2)

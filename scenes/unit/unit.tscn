@@ -1,14 +1,32 @@
 [gd_scene format=3 uid="uid://cujvlip6ybnu"]
 
 [ext_resource type="Script" uid="uid://cln48h1kijmxa" path="res://scripts/unit/Unit.cs" id="1_fmv3f"]
+[ext_resource type="Script" uid="uid://c7dq7dbj701rh" path="res://scripts/resources/AboutResource.cs" id="2_bhlit"]
 [ext_resource type="PackedScene" uid="uid://l7lybil58ucm" path="res://scenes/unit/unit_body.tscn" id="2_fvc8g"]
+[ext_resource type="PackedScene" uid="uid://db2ixim3nkv1i" path="res://scenes/unit/unit_control.tscn" id="4_vgvef"]
+
+[sub_resource type="Resource" id="Resource_3po7s"]
+script = ExtResource("2_bhlit")
+MaxHp = 20.0
+MaxArmor = 10.0
+MaxAbsorbtion = 10.0
+DefaultDamage = 10.0
+KritChance = 0.3
+KritDamage = 20.0
+MaxSpeed = 20.0
+metadata/_custom_type_script = "uid://c7dq7dbj701rh"
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fvc8g"]
 
-[node name="Unit" type="CharacterBody2D" unique_id=1833189167]
+[node name="Unit" type="CharacterBody2D" unique_id=1833189167 node_paths=PackedStringArray("Body", "Controller")]
 script = ExtResource("1_fmv3f")
+Body = NodePath("UnitBody")
+Stats = SubResource("Resource_3po7s")
+Controller = NodePath("UnitControl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1235134425]
 shape = SubResource("CapsuleShape2D_fvc8g")
 
 [node name="UnitBody" parent="." unique_id=75413389 instance=ExtResource("2_fvc8g")]
+
+[node name="UnitControl" parent="." unique_id=329941268 instance=ExtResource("4_vgvef")]

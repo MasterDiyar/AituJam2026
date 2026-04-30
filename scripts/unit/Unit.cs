@@ -8,6 +8,7 @@ public partial class Unit : CharacterBody2D, IDamagable
     [Export] public UnitBody Body;
     [Export] public AboutResource Stats;
     [Export] public Faction UnitFaction;
+    [Export] public UnitController Controller;
 
     
     public float MaxHp, MaxArmor, MaxAbsorbtion, DefaultDamage, KritChance, KritDamage, MaxSpeed;

@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bjnkdq8474r4c"]
+
+[ext_resource type="PackedScene" uid="uid://cbm3er54siuxb" path="res://scenes/test/test_control.tscn" id="1_uv8r2"]
+[ext_resource type="PackedScene" uid="uid://cujvlip6ybnu" path="res://scenes/unit/unit.tscn" id="2_xii62"]
+
+[node name="Arena" type="Node2D" unique_id=655739801]
+
+[node name="TestControl" parent="." unique_id=273127478 node_paths=PackedStringArray("units") instance=ExtResource("1_uv8r2")]
+units = [NodePath("../Unit"), NodePath("../Unit2"), NodePath("../Unit3")]
+
+[node name="Unit" parent="." unique_id=1833189167 instance=ExtResource("2_xii62")]
+position = Vector2(239.35077, 382.68732)
+
+[node name="Unit2" parent="." unique_id=1916884993 instance=ExtResource("2_xii62")]
+position = Vector2(494.55078, 366.18732)
+
+[node name="Unit3" parent="." unique_id=196034641 instance=ExtResource("2_xii62")]
+position = Vector2(789.35077, 387.08728)
