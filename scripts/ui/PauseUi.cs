@@ -8,9 +8,12 @@ public partial class PauseUi : Control
 	bool isSoundOn = false;
 	public override void _Ready()
 	{
+		returnButton.Pressed += ReturnToGame;
 	}
 
-	public override void _Process(double delta)
+	void ReturnToGame()
 	{
+		
 	}
+
 }

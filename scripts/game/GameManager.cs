@@ -9,6 +9,8 @@ public partial class GameManager : Node
 	public PauseUi PauseUI;
 	public Game Game;
 	
+	bool isPaused = false;
+	
 	
 	public override void _Ready()
 	{
@@ -28,6 +30,9 @@ public partial class GameManager : Node
 		foreach (var node in NoDestroy.GetChildren())
 			node.Reparent(ssilka);
 	}
-	
 
+	public void TogglePause(bool pause = true){
+		isPaused = pause;
+		Pausable.ProcessMode = ProcessModeEnum.Pausable;
+	}
 }
