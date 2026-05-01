@@ -11,7 +11,10 @@ public partial class GameManager : Node
 	public CanvasLayer UI;
 	
 	bool isPaused = false;
+
+	public float Money = 0, Food = 0;
 	
+	Action OnMoneyChange, OnFoodChange;
 	
 	public override void _Ready()
 	{

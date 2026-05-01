@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://ba3fi3mofl7y5"]
+
+[ext_resource type="FontFile" uid="uid://dwwy72kh06k47" path="res://assets/fonts/Darinia/Darinia.ttf" id="1_hjae2"]
+[ext_resource type="Texture2D" uid="uid://b08fogu2itvh4" path="res://assets/ui/button.png" id="2_ur6ll"]
+[ext_resource type="Script" uid="uid://b1i0o6xatru86" path="res://scripts/ui/BuyButton.cs" id="3_ur6ll"]
+
+[node name="Button" type="Button" unique_id=1548507051]
+texture_filter = 3
+offset_right = 78.0
+offset_bottom = 27.0
+theme_override_fonts/font = ExtResource("1_hjae2")
+icon = ExtResource("2_ur6ll")
+flat = true
+icon_alignment = 1
+script = ExtResource("3_ur6ll")

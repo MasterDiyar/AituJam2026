@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://movqo185l5gd"]
 
 [ext_resource type="Texture2D" uid="uid://bdtuwxmw1lfat" path="res://assets/ui/Person.png" id="1_ioeec"]
+[ext_resource type="Script" uid="uid://dbmmdk45g8ovr" path="res://scripts/ui/EnemyUi.cs" id="1_vf4ou"]
 [ext_resource type="FontFile" uid="uid://dwwy72kh06k47" path="res://assets/fonts/Darinia/Darinia.ttf" id="2_7d8yk"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_vf4ou"]
@@ -11,13 +12,16 @@ outline_size = 1
 shadow_color = Color(0, 0, 0, 0.70980394)
 shadow_offset = Vector2(0.5, 0.5)
 
-[node name="EnemyUI" type="Control" unique_id=758637822]
+[node name="EnemyUI" type="Control" unique_id=758637822 node_paths=PackedStringArray("Portrait", "NameLabel")]
 texture_filter = 3
 layout_mode = 3
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 grow_horizontal = 0
+script = ExtResource("1_vf4ou")
+Portrait = NodePath("TextureRect/Face")
+NameLabel = NodePath("TextureRect/Label")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=331371469]
 custom_minimum_size = Vector2(496, 192)

@@ -52,23 +52,23 @@ texture = ExtResource("5_p3u82")
 position = Vector2(-52, -32)
 texture = ExtResource("6_060gm")
 script = ExtResource("7_060gm")
-RotationSpeed = 40.0
+RotationSpeed = 3.14
 
 [node name="WheatGrown" type="Sprite2D" parent="WindMill" unique_id=932739286]
 position = Vector2(3, 0)
 texture = ExtResource("8_tsh4h")
 
 [node name="Tent" type="Sprite2D" parent="." unique_id=1877678673]
-position = Vector2(1012, 784)
+position = Vector2(1799, 586)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("9_0kxs2")
 
 [node name="Tent2" type="Sprite2D" parent="." unique_id=529464923]
-position = Vector2(1095, 845)
+position = Vector2(1614, 593.00006)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("9_0kxs2")
 
 [node name="Tent3" type="Sprite2D" parent="." unique_id=1874123824]
-position = Vector2(1120, 938)
+position = Vector2(1800, 713.00006)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("9_0kxs2")
