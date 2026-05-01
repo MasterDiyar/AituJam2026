@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://movqo185l5gd"]
+
+[ext_resource type="Texture2D" uid="uid://bdtuwxmw1lfat" path="res://assets/ui/Person.png" id="1_ioeec"]
+[ext_resource type="FontFile" uid="uid://dwwy72kh06k47" path="res://assets/fonts/Darinia/Darinia.ttf" id="2_7d8yk"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_vf4ou"]
+font = ExtResource("2_7d8yk")
+font_size = 14
+font_color = Color(1.4369954, 1.4369954, 1.387082, 1)
+outline_size = 1
+shadow_color = Color(0, 0, 0, 0.70980394)
+shadow_offset = Vector2(0.5, 0.5)
+
+[node name="EnemyUI" type="Control" unique_id=758637822]
+texture_filter = 3
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+grow_horizontal = 0
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=331371469]
+custom_minimum_size = Vector2(496, 192)
+layout_mode = 0
+offset_left = -496.0
+offset_bottom = 160.0
+texture = ExtResource("1_ioeec")
+
+[node name="Face" type="TextureRect" parent="TextureRect" unique_id=530442476]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 0
+offset_left = 352.0
+offset_top = 16.0
+offset_right = 480.0
+offset_bottom = 144.0
+
+[node name="Label" type="Label" parent="TextureRect" unique_id=716334863]
+layout_mode = 0
+offset_left = 341.0
+offset_top = 162.0
+offset_right = 494.0
+offset_bottom = 186.0
+text = "Otto Von Bismark"
+label_settings = SubResource("LabelSettings_vf4ou")

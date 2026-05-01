@@ -1,6 +1,10 @@
 [gd_scene format=3 uid="uid://l7lybil58ucm"]
 
 [ext_resource type="Script" uid="uid://cfw8on8yhmotk" path="res://scripts/unit/UnitBody.cs" id="1_cjtb0"]
+[ext_resource type="Texture2D" uid="uid://bp6s5r6w8kwpe" path="res://assets/texture/mobs/torso.png" id="2_qfj1v"]
+[ext_resource type="Texture2D" uid="uid://dwjow71o3jsyo" path="res://assets/texture/mobs/colchuga.png" id="3_qfj1v"]
+[ext_resource type="Texture2D" uid="uid://b3r7kmsis08vh" path="res://assets/texture/mobs/Head2.png" id="4_ekwg2"]
+[ext_resource type="Texture2D" uid="uid://dxv3w7ty3e62w" path="res://assets/texture/mobs/pike.png" id="5_52ksc"]
 
 [node name="UnitBody" type="Node2D" unique_id=75413389 node_paths=PackedStringArray("Body", "Cloth", "Head", "Hat", "Weapon", "Secondary")]
 texture_filter = 3
@@ -13,16 +17,19 @@ Weapon = NodePath("Weapon")
 Secondary = NodePath("Secondary")
 
 [node name="Body" type="Sprite2D" parent="." unique_id=1275588481]
+texture = ExtResource("2_qfj1v")
 
 [node name="Cloth" type="Sprite2D" parent="Body" unique_id=788388202]
+texture = ExtResource("3_qfj1v")
 
 [node name="Head" type="Sprite2D" parent="." unique_id=333443519]
 position = Vector2(0, -20)
+texture = ExtResource("4_ekwg2")
 
 [node name="Hat" type="Sprite2D" parent="Head" unique_id=1240982316]
-position = Vector2(0, 20)
 
 [node name="Weapon" type="Sprite2D" parent="." unique_id=174021426]
+texture = ExtResource("5_52ksc")
 
 [node name="Secondary" type="Sprite2D" parent="." unique_id=1924156845]
 

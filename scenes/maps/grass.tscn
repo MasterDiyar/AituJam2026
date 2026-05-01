@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://fdtsxwixffs1" path="res://assets/texture/territory/mill.png" id="6_060gm"]
 [ext_resource type="Script" uid="uid://w7rrfd57fl7d" path="res://scripts/other/InfinityRotate.cs" id="7_060gm"]
 [ext_resource type="Texture2D" uid="uid://c3wa0jkusynh4" path="res://assets/texture/territory/wheatGrown.png" id="8_tsh4h"]
+[ext_resource type="Texture2D" uid="uid://cp18dwu4hhk1s" path="res://assets/texture/territory/tent.png" id="9_0kxs2"]
 
 [sub_resource type="Gradient" id="Gradient_4nagy"]
 offsets = PackedFloat32Array(0.29927006, 0.6788321)
@@ -43,14 +44,31 @@ region_enabled = true
 region_rect = Rect2(0, 0, 2048, 2048)
 
 [node name="WindMill" type="Sprite2D" parent="." unique_id=443136133]
-position = Vector2(281, 671)
+position = Vector2(144.39471, 721.8631)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("5_p3u82")
 
 [node name="Mill" type="Sprite2D" parent="WindMill" unique_id=1543746472]
 position = Vector2(-52, -32)
 texture = ExtResource("6_060gm")
 script = ExtResource("7_060gm")
+RotationSpeed = 40.0
 
-[node name="WheatGrown" type="Sprite2D" parent="." unique_id=932739286]
-position = Vector2(284, 671)
+[node name="WheatGrown" type="Sprite2D" parent="WindMill" unique_id=932739286]
+position = Vector2(3, 0)
 texture = ExtResource("8_tsh4h")
+
+[node name="Tent" type="Sprite2D" parent="." unique_id=1877678673]
+position = Vector2(1012, 784)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("9_0kxs2")
+
+[node name="Tent2" type="Sprite2D" parent="." unique_id=529464923]
+position = Vector2(1095, 845)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("9_0kxs2")
+
+[node name="Tent3" type="Sprite2D" parent="." unique_id=1874123824]
+position = Vector2(1120, 938)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("9_0kxs2")

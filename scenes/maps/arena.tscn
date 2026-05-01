@@ -1,42 +1,8 @@
 [gd_scene format=3 uid="uid://bjnkdq8474r4c"]
 
-[ext_resource type="PackedScene" uid="uid://cbm3er54siuxb" path="res://scenes/test/test_control.tscn" id="1_uv8r2"]
 [ext_resource type="PackedScene" uid="uid://cmwd65bv6a5xo" path="res://scenes/maps/grass.tscn" id="1_xii62"]
-[ext_resource type="PackedScene" uid="uid://bwlhskiyuevmb" path="res://scenes/unitTupes/kopie_ton.tscn" id="2_uv8r2"]
 
 [node name="Arena" type="Node2D" unique_id=655739801]
 
 [node name="grass" parent="." unique_id=1565852210 instance=ExtResource("1_xii62")]
 z_index = -2
-
-[node name="TestControl" parent="." unique_id=273127478 node_paths=PackedStringArray("units") instance=ExtResource("1_uv8r2")]
-units = [NodePath("../KopieTon"), NodePath("../KopieTon2"), NodePath("../KopieTon3")]
-actions = Array[int]([3, 3, 1, 1])
-timePerAction = 2.0
-
-[node name="TestControl2" parent="." unique_id=458462960 node_paths=PackedStringArray("units") instance=ExtResource("1_uv8r2")]
-offset_left = -15.965332
-offset_top = -468.18518
-offset_right = -15.965332
-offset_bottom = -468.18518
-team = 1
-units = [NodePath("../KopieTon4")]
-actions = Array[int]([3, 1, 4])
-timePerAction = 2.0
-
-[node name="KopieTon" parent="." unique_id=1833189167 instance=ExtResource("2_uv8r2")]
-position = Vector2(572, 335)
-input_pickable = false
-
-[node name="KopieTon2" parent="." unique_id=665568683 instance=ExtResource("2_uv8r2")]
-position = Vector2(722.9122, 370.23633)
-input_pickable = false
-
-[node name="KopieTon3" parent="." unique_id=1009055932 instance=ExtResource("2_uv8r2")]
-position = Vector2(402.57886, 366.82123)
-input_pickable = false
-
-[node name="KopieTon4" parent="." unique_id=1517751027 instance=ExtResource("2_uv8r2")]
-position = Vector2(676.033, 101.537186)
-input_pickable = false
-UnitFaction = 1
