@@ -1,4 +1,6 @@
-﻿using Godot;
+﻿using System;
+using System.Linq;
+using Godot;
 
 namespace AITUJAM2026.scripts.unit;
 
@@ -9,7 +11,8 @@ public partial class Deck : Node
     [Export] public Godot.Collections.Array<UnitActions> actions;
     [Export] public float timePerAction;
     
-    int currentAction = 0;
+    public int currentAction = 0;
+    public Action<int> ActionChanged;
 
     public override void _Ready()
     {
@@ -23,21 +26,20 @@ public partial class Deck : Node
         timer.WaitTime = timePerAction;
         timer.Start();
         timer.Timeout += TimerOnTimeout;
-        CallDeferred(nameof(TimerOnTimeout));
     }
 
     private void TimerOnTimeout()
     {
         currentAction = (currentAction + 1) % actions.Count;
         SetAction(actions[currentAction]);
-        
+        ActionChanged?.Invoke(currentAction);
     }
 
     public void SetAction(UnitActions action)
     {
+        units = new Godot.Collections.Array<Unit>(units.Where(IsInstanceValid));
         foreach (var unit in units)
-        {
             unit.Controller.Act(action);
-        }
+        
     }
 }

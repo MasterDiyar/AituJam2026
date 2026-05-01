@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://e2qpea42ndwm"]
+
+[ext_resource type="Script" uid="uid://d1bti5w7lwj8q" path="res://scripts/unit/Deck.cs" id="1_g50ai"]
+[ext_resource type="Script" uid="uid://brpvfg0314qkc" path="res://scripts/ui/ActionContainer.cs" id="2_wcgsw"]
+[ext_resource type="Texture2D" uid="uid://c4w0i1n62ndw6" path="res://assets/texture/order/Heal.png" id="3_bf6om"]
+[ext_resource type="Texture2D" uid="uid://b3cwe57evdwog" path="res://assets/texture/order/Attack.png" id="4_k3yx0"]
+[ext_resource type="Texture2D" uid="uid://cgnpgcr4af81g" path="res://assets/texture/order/Defend.png" id="5_crgut"]
+[ext_resource type="Texture2D" uid="uid://c217s35bsna2d" path="res://assets/texture/order/Forward.png" id="6_q07jj"]
+[ext_resource type="Texture2D" uid="uid://6eu0ok2erh0i" path="res://assets/texture/order/Backward.png" id="7_qqcao"]
+[ext_resource type="Texture2D" uid="uid://dnolfv4d7g3pr" path="res://assets/texture/order/Rush.png" id="8_wcgrq"]
+
+[node name="WorkingDeck" type="Node2D" unique_id=1306240071 node_paths=PackedStringArray("units")]
+script = ExtResource("1_g50ai")
+units = []
+actions = Array[int]([0, 4, 2])
+timePerAction = 1.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1785348634]
+offset_left = 693.0
+offset_top = 61.0
+offset_right = 944.0
+offset_bottom = 117.0
+script = ExtResource("2_wcgsw")
+Textures = Dictionary[int, Texture2D]({
+0: ExtResource("3_bf6om"),
+1: ExtResource("4_k3yx0"),
+2: ExtResource("5_crgut"),
+3: ExtResource("6_q07jj"),
+4: ExtResource("7_qqcao"),
+5: ExtResource("8_wcgrq")
+})

@@ -45,7 +45,7 @@ metadata/_custom_type_script = "uid://c4ypseweqfmmv"
 script = ExtResource("11_10hun")
 Bullet = SubResource("Resource_heane")
 Damage = 5.0
-AttackSpeed = 10.0
+AttackSpeed = 2.0
 Count = 1
 AttackDistance = 80.0
 metadata/_custom_type_script = "uid://bpfif762meayr"
@@ -56,6 +56,5 @@ Stats = SubResource("Resource_7q3d7")
 [node name="UnitBody" parent="." index="1" unique_id=75413389]
 uResource = SubResource("Resource_10hun")
 
-[node name="Weapon" parent="." index="3" unique_id=2024550278 node_paths=PackedStringArray("Parent")]
-Parent = NodePath("..")
+[node name="Weapon" parent="." index="3" unique_id=2024550278]
 WeaponInstance = SubResource("Resource_38a7r")

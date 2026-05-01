@@ -12,6 +12,7 @@ public partial class Bullet : Area2D
 	public override void _Ready()
 	{
 		BulletResource.SetBullet(this);
+		BodyEntered += OnBodyEntered;
 	}
 
 	public override void _Process(double delta)

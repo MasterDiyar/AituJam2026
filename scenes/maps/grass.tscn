@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://cmwd65bv6a5xo"]
+
+[ext_resource type="Shader" uid="uid://bx2koltkq3o0o" path="res://shaders/earth_shaderV1.gdshader" id="1_4nagy"]
+[ext_resource type="Texture2D" uid="uid://b70hb6ayh8agv" path="res://assets/texture/territory/grass3.png" id="2_2isf2"]
+[ext_resource type="Texture2D" uid="uid://jx605h0mh0kd" path="res://assets/texture/territory/grass2.png" id="3_p3u82"]
+[ext_resource type="Texture2D" uid="uid://drhd2cydqxdgl" path="res://assets/texture/territory/grass1.png" id="4_060gm"]
+[ext_resource type="Texture2D" uid="uid://c73g5u2i4a7ak" path="res://assets/texture/territory/WindMill.png" id="5_p3u82"]
+[ext_resource type="Texture2D" uid="uid://fdtsxwixffs1" path="res://assets/texture/territory/mill.png" id="6_060gm"]
+[ext_resource type="Script" uid="uid://w7rrfd57fl7d" path="res://scripts/other/InfinityRotate.cs" id="7_060gm"]
+[ext_resource type="Texture2D" uid="uid://c3wa0jkusynh4" path="res://assets/texture/territory/wheatGrown.png" id="8_tsh4h"]
+
+[sub_resource type="Gradient" id="Gradient_4nagy"]
+offsets = PackedFloat32Array(0.29927006, 0.6788321)
+colors = PackedColorArray(0.4152355, 0.99999994, 0.44777805, 1, 0.35340008, 0.67445236, 0.450665, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_tsh4h"]
+seed = 25
+fractal_octaves = 6
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_0kxs2"]
+noise = SubResource("FastNoiseLite_tsh4h")
+color_ramp = SubResource("Gradient_4nagy")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cfn3w"]
+shader = ExtResource("1_4nagy")
+shader_parameter/layer_r = ExtResource("4_060gm")
+shader_parameter/layer_g = ExtResource("3_p3u82")
+shader_parameter/layer_b = ExtResource("2_2isf2")
+shader_parameter/noise_img = SubResource("NoiseTexture2D_0kxs2")
+shader_parameter/uv_scale = 10.0
+
+[node name="grass" type="Node2D" unique_id=1565852210]
+texture_filter = 3
+
+[node name="grass" type="Sprite2D" parent="." unique_id=177127559]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_cfn3w")
+position = Vector2(602, 317)
+scale = Vector2(2, 2)
+texture = ExtResource("2_2isf2")
+region_enabled = true
+region_rect = Rect2(0, 0, 2048, 2048)
+
+[node name="WindMill" type="Sprite2D" parent="." unique_id=443136133]
+position = Vector2(281, 671)
+texture = ExtResource("5_p3u82")
+
+[node name="Mill" type="Sprite2D" parent="WindMill" unique_id=1543746472]
+position = Vector2(-52, -32)
+texture = ExtResource("6_060gm")
+script = ExtResource("7_060gm")
+
+[node name="WheatGrown" type="Sprite2D" parent="." unique_id=932739286]
+position = Vector2(284, 671)
+texture = ExtResource("8_tsh4h")

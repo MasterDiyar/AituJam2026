@@ -13,7 +13,7 @@ public partial class BulletResource :  Resource
     public void SetBullet(Bullet bullet)
     {
         bullet.Speed = Speed;
-        bullet.Damage = Damage;
+        bullet.Damage += Damage;
         bullet.LifeTime = LifeTime;
         bullet.Consume = Consume;
         bullet.Rotation += SpawnAngle;

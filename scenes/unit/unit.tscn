@@ -21,4 +21,5 @@ shape = SubResource("CapsuleShape2D_fvc8g")
 
 [node name="UnitControl" parent="." unique_id=329941268 instance=ExtResource("4_vgvef")]
 
-[node name="Weapon" parent="." unique_id=2024550278 instance=ExtResource("4_bhlit")]
+[node name="Weapon" parent="." unique_id=2024550278 node_paths=PackedStringArray("Parent") instance=ExtResource("4_bhlit")]
+Parent = NodePath("..")
