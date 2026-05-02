@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://w7rrfd57fl7d" path="res://scripts/other/InfinityRotate.cs" id="7_060gm"]
 [ext_resource type="Texture2D" uid="uid://c3wa0jkusynh4" path="res://assets/texture/territory/wheatGrown.png" id="8_tsh4h"]
 [ext_resource type="Texture2D" uid="uid://cp18dwu4hhk1s" path="res://assets/texture/territory/tent.png" id="9_0kxs2"]
+[ext_resource type="Texture2D" uid="uid://co4532nlv7iyn" path="res://assets/texture/territory/forge.png" id="10_cfn3w"]
 
 [sub_resource type="Gradient" id="Gradient_4nagy"]
 offsets = PackedFloat32Array(0.29927006, 0.6788321)
@@ -32,9 +33,12 @@ shader_parameter/noise_img = SubResource("NoiseTexture2D_0kxs2")
 shader_parameter/uv_scale = 10.0
 
 [node name="grass" type="Node2D" unique_id=1565852210]
+z_index = 2
+y_sort_enabled = true
 texture_filter = 3
 
 [node name="grass" type="Sprite2D" parent="." unique_id=177127559]
+z_index = -6
 texture_repeat = 2
 material = SubResource("ShaderMaterial_cfn3w")
 position = Vector2(602, 317)
@@ -44,8 +48,8 @@ region_enabled = true
 region_rect = Rect2(0, 0, 2048, 2048)
 
 [node name="WindMill" type="Sprite2D" parent="." unique_id=443136133]
-position = Vector2(144.39471, 721.8631)
-scale = Vector2(1.5, 1.5)
+position = Vector2(147, 717)
+scale = Vector2(2, 2)
 texture = ExtResource("5_p3u82")
 
 [node name="Mill" type="Sprite2D" parent="WindMill" unique_id=1543746472]
@@ -55,6 +59,21 @@ script = ExtResource("7_060gm")
 RotationSpeed = 3.14
 
 [node name="WheatGrown" type="Sprite2D" parent="WindMill" unique_id=932739286]
+position = Vector2(3, 0)
+texture = ExtResource("8_tsh4h")
+
+[node name="WindMill2" type="Sprite2D" parent="." unique_id=1117172507]
+position = Vector2(141, 388)
+scale = Vector2(2, 2)
+texture = ExtResource("5_p3u82")
+
+[node name="Mill" type="Sprite2D" parent="WindMill2" unique_id=1554265645]
+position = Vector2(-52, -32)
+texture = ExtResource("6_060gm")
+script = ExtResource("7_060gm")
+RotationSpeed = 3.14
+
+[node name="WheatGrown" type="Sprite2D" parent="WindMill2" unique_id=1031476190]
 position = Vector2(3, 0)
 texture = ExtResource("8_tsh4h")
 
@@ -72,3 +91,33 @@ texture = ExtResource("9_0kxs2")
 position = Vector2(1800, 713.00006)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("9_0kxs2")
+
+[node name="Tent4" type="Sprite2D" parent="." unique_id=483660294]
+position = Vector2(1626, 722)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("9_0kxs2")
+
+[node name="Tent5" type="Sprite2D" parent="." unique_id=239192003]
+position = Vector2(1603, 852)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("9_0kxs2")
+
+[node name="Tent6" type="Sprite2D" parent="." unique_id=1806295168]
+position = Vector2(1795.0001, 844)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("9_0kxs2")
+
+[node name="Tent7" type="Sprite2D" parent="." unique_id=1077274769]
+position = Vector2(1608, 973)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("9_0kxs2")
+
+[node name="Tent8" type="Sprite2D" parent="." unique_id=127308658]
+position = Vector2(1800.0001, 965)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("9_0kxs2")
+
+[node name="Forge" type="Sprite2D" parent="." unique_id=1671783551]
+position = Vector2(485, 691)
+scale = Vector2(2, 2)
+texture = ExtResource("10_cfn3w")
