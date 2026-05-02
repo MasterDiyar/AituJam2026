@@ -13,6 +13,7 @@ public partial class GameManager : Node
 	bool isPaused = false;
 
 	public float Money = 0, Food = 0;
+	public float AddictiveHp =0, AddictiveDamage =0;
 	
 	Action OnMoneyChange, OnFoodChange;
 	

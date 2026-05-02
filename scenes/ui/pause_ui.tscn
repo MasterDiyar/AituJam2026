@@ -1,9 +1,12 @@
 [gd_scene format=3 uid="uid://c6o4o7vvuf4ap"]
 
 [ext_resource type="Script" uid="uid://cyfkq6qle6emb" path="res://scripts/ui/PauseUi.cs" id="1_xt3ok"]
+[ext_resource type="FontFile" uid="uid://dwwy72kh06k47" path="res://assets/fonts/Darinia/Darinia.ttf" id="2_yrwkb"]
+[ext_resource type="Texture2D" uid="uid://b8brkvbvqhsst" path="res://assets/ui/WideButton.png" id="3_8dn2d"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j33sd"]
-bg_color = Color(0.6, 0.6, 0.6, 0.2509804)
+bg_color = Color(0.2702219, 0.27022195, 0.27022177, 0.2509804)
+border_color = Color(0.35156286, 0.35156295, 0.35156265, 1)
 corner_radius_top_left = 50
 corner_radius_top_right = 50
 corner_radius_bottom_right = 50
@@ -53,13 +56,31 @@ layout_mode = 2
 alignment = 1
 
 [node name="Button" type="Button" parent="pausePanel/MarginContainer/VBoxContainer" unique_id=337308394]
+texture_filter = 3
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_yrwkb")
+theme_override_font_sizes/font_size = 26
 text = "Rejoin"
+icon = ExtResource("3_8dn2d")
+flat = true
+icon_alignment = 1
 
 [node name="Button3" type="Button" parent="pausePanel/MarginContainer/VBoxContainer" unique_id=234193809]
+texture_filter = 3
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_yrwkb")
+theme_override_font_sizes/font_size = 26
 text = "OffSound"
+icon = ExtResource("3_8dn2d")
+flat = true
+icon_alignment = 1
 
 [node name="Button4" type="Button" parent="pausePanel/MarginContainer/VBoxContainer" unique_id=1208314977]
+texture_filter = 3
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_yrwkb")
+theme_override_font_sizes/font_size = 26
 text = "Quit"
+icon = ExtResource("3_8dn2d")
+flat = true
+icon_alignment = 1

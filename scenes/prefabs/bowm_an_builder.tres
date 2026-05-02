@@ -1,21 +1,22 @@
-[gd_resource type="Resource" script_class="UnitBuilder" format=3 uid="uid://cw3slxikax62p"]
+[gd_resource type="Resource" script_class="UnitBuilder" format=3 uid="uid://cm34225whv0mr"]
 
 [ext_resource type="Script" uid="uid://druednhiunuuk" path="res://scripts/resources/UnitBuilder.cs" id="1_nvef4"]
 [ext_resource type="Script" uid="uid://c7dq7dbj701rh" path="res://scripts/resources/AboutResource.cs" id="2_mpw58"]
 [ext_resource type="Resource" uid="uid://dc8nd5rijpdk2" path="res://scenes/prefabs/kopie_ton_body.tres" id="3_e040o"]
 [ext_resource type="Script" uid="uid://c6ssf02wfkc24" path="res://scripts/weapons/Bullet.cs" id="4_qvgpf"]
 [ext_resource type="Script" uid="uid://c4ypseweqfmmv" path="res://scripts/resources/BulletResource.cs" id="5_guy01"]
+[ext_resource type="Texture2D" uid="uid://bbfcxfrie2el1" path="res://assets/texture/mobs/arrow.png" id="5_mpw58"]
 [ext_resource type="Script" uid="uid://bpfif762meayr" path="res://scripts/resources/WeaponResource.cs" id="6_jvb14"]
 
 [sub_resource type="Resource" id="Resource_srt2h"]
 script = ExtResource("2_mpw58")
-MaxHp = 90.0
-MaxArmor = 20.0
+MaxHp = 60.0
+MaxArmor = 10.0
 MaxAbsorbtion = 2.0
-DefaultDamage = 90.0
+DefaultDamage = 10.0
 KritChance = 0.5
-KritDamage = 20.0
-MaxSpeed = 20.0
+KritDamage = 90.0
+MaxSpeed = 15.0
 metadata/_custom_type_script = "uid://c7dq7dbj701rh"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cbxnk"]
@@ -39,7 +40,8 @@ _bundled = {
 [sub_resource type="Resource" id="Resource_mpw58"]
 script = ExtResource("5_guy01")
 BulletResourceScene = SubResource("PackedScene_nvef4")
-Speed = 210.0
+Icon = ExtResource("5_mpw58")
+Speed = 240.0
 Damage = 4.0
 LifeTime = 6.0
 Consume = 6.0
@@ -50,7 +52,7 @@ metadata/_custom_type_script = "uid://c4ypseweqfmmv"
 script = ExtResource("6_jvb14")
 Bullet = SubResource("Resource_mpw58")
 Damage = 3.0
-AttackSpeed = 2.0
+AttackSpeed = 2.5
 Count = 1
 AttackDistance = 80.0
 SpawnOffset = 30.0

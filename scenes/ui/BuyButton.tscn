@@ -8,6 +8,11 @@
 texture_filter = 3
 offset_right = 78.0
 offset_bottom = 27.0
+theme_override_colors/font_color = Color(0.080783166, 0.08078342, 0.080783226, 1)
+theme_override_colors/font_focus_color = Color(0.22310266, 0.22310293, 0.22310343, 1)
+theme_override_colors/font_pressed_color = Color(0.3854925, 0.38549247, 0.38549247, 1)
+theme_override_colors/font_hover_color = Color(0.3854925, 0.38549247, 0.38549247, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.3854925, 0.38549247, 0.38549247, 1)
 theme_override_fonts/font = ExtResource("1_hjae2")
 theme_override_font_sizes/font_size = 36
 icon = ExtResource("2_ur6ll")
@@ -15,4 +20,3 @@ flat = true
 icon_alignment = 1
 expand_icon = true
 script = ExtResource("3_ur6ll")
-theme_override_font_sizes/font_size = 36

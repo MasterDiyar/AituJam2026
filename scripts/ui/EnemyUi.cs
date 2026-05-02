@@ -12,7 +12,7 @@ public partial class EnemyUi : Control
 	[Export] private TextureRect Portrait;
 	
 	[Export] private Label NameLabel;
-	readonly Vector2 startPos = new(1152, 0), endPos = new(1152, -192);
+	readonly Vector2 startPos = new(1920, 0), endPos = new(1920, -192);
 	bool whereMove = false;
 	Tween moveTween;
 	[Export] private Deck WorkingDeck;
@@ -38,7 +38,11 @@ public partial class EnemyUi : Control
 	private void SetRandomPerson()
 	{
 		NameLabel.Text = Names[new Random().Next(0, Names.Length)];
-		Portrait.Texture = GD.Load<Texture2D>($"res://assets/texture/{Links[new Random().Next(0, Links.Length)]}.png");
+		Portrait.Texture = GD.Load<Texture2D>($"res://assets/texture/heads/{Links[new Random().Next(0, Links.Length)]}.png");
 	}
-	
+
+	public override void _Ready()
+	{
+		ToggleUi(false);
+	}
 }

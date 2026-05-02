@@ -26,7 +26,7 @@ public partial class Weapon : Node2D
             bullet.hozyain = Parent.UnitFaction;
             bullet.Rotation = angle + i * WeaponInstance.BetWeenAngle;
             bullet.GlobalPosition = Parent.Body.Weapon.GlobalPosition + Vector2.FromAngle(bullet.Rotation) * WeaponInstance.SpawnOffset;
-            bullet.Damage = WeaponInstance.Damage;
+            bullet.Damage = WeaponInstance.Damage + GameManager.Instance.AddictiveDamage;
             GameManager.Instance.Pausable.AddChild(bullet);
         }
     }

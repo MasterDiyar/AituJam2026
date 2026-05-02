@@ -7,13 +7,13 @@ public partial class BuyButton : Button
 	{
 		Tent,
 		Farm,
-		Bread,
+		Tavern,
 		Forge
 	}
 
 	[Export] private PressAction pressAction;
 	[Export] private float price;
-	[Export] private Sprite2D hidingSprite;
+	[Export] private CanvasItem hidingSprite;
 
 	public override void _Ready()
 	{
@@ -29,13 +29,10 @@ public partial class BuyButton : Button
 				GD.Print("Tent");
 				break;
 			case PressAction.Farm:
-				GD.Print("Farm");
-				break;
-			case PressAction.Bread:
-				GD.Print("Bread");
+				GameManager.Instance.AddictiveHp += 4;
 				break;
 			case PressAction.Forge:
-				GD.Print("Forge");
+				GameManager.Instance.AddictiveDamage += 2;
 				break;
 		}
 		hidingSprite.Show();

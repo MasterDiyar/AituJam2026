@@ -40,6 +40,6 @@ public partial class Unit : CharacterBody2D, IDamagable
 
     public void Heal(float heal)
     {
-        Hp += heal;
+        Hp = Mathf.Min(Hp + heal, MaxHp);
     }
 }

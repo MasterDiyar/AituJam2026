@@ -2,10 +2,13 @@
 
 [ext_resource type="Script" uid="uid://bxmg26s4csy4u" path="res://scripts/game/Arena.cs" id="1_uv8r2"]
 [ext_resource type="PackedScene" uid="uid://cmwd65bv6a5xo" path="res://scenes/maps/grass.tscn" id="1_xii62"]
+[ext_resource type="Texture2D" uid="uid://mrh8rymaq7ug" path="res://assets/ui/sbor.png" id="4_wa5pj"]
 
-[node name="Arena" type="Node2D" unique_id=655739801 node_paths=PackedStringArray("camera")]
+[node name="Arena" type="Node2D" unique_id=655739801 node_paths=PackedStringArray("camera", "_mobsGrid")]
+texture_filter = 3
 script = ExtResource("1_uv8r2")
 camera = NodePath("Camera2D")
+_mobsGrid = NodePath("GridContainer")
 
 [node name="grass" parent="." unique_id=1565852210 instance=ExtResource("1_xii62")]
 z_index = -2
@@ -14,3 +17,19 @@ position = Vector2(0, 800)
 [node name="Camera2D" type="Camera2D" parent="." unique_id=791779951]
 position = Vector2(0, 800)
 anchor_mode = 0
+
+[node name="GridContainer" type="GridContainer" parent="." unique_id=1080172104]
+texture_filter = 3
+offset_left = 787.0
+offset_top = 1246.0
+offset_right = 1055.0
+offset_bottom = 1514.0
+scale = Vector2(2, 2)
+columns = 4
+
+[node name="Sbor" type="Sprite2D" parent="." unique_id=1299681455]
+z_index = -1
+position = Vector2(787, 1246)
+scale = Vector2(2, 2)
+texture = ExtResource("4_wa5pj")
+centered = false
