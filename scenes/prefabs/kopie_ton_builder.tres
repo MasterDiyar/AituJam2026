@@ -1,0 +1,67 @@
+[gd_resource type="Resource" script_class="UnitBuilder" format=3 uid="uid://d3w7usk18i1da"]
+
+[ext_resource type="Script" uid="uid://druednhiunuuk" path="res://scripts/resources/UnitBuilder.cs" id="1_tjmah"]
+[ext_resource type="Script" uid="uid://c7dq7dbj701rh" path="res://scripts/resources/AboutResource.cs" id="2_3hlbk"]
+[ext_resource type="Resource" uid="uid://dc8nd5rijpdk2" path="res://scenes/prefabs/kopie_ton_body.tres" id="3_6usux"]
+[ext_resource type="Script" uid="uid://c6ssf02wfkc24" path="res://scripts/weapons/Bullet.cs" id="4_rox1e"]
+[ext_resource type="Script" uid="uid://c4ypseweqfmmv" path="res://scripts/resources/BulletResource.cs" id="5_yjxke"]
+[ext_resource type="Script" uid="uid://bpfif762meayr" path="res://scripts/resources/WeaponResource.cs" id="6_wl2xb"]
+
+[sub_resource type="Resource" id="Resource_srt2h"]
+script = ExtResource("2_3hlbk")
+MaxHp = 90.0
+MaxArmor = 20.0
+MaxAbsorbtion = 2.0
+DefaultDamage = 90.0
+KritChance = 0.5
+KritDamage = 20.0
+MaxSpeed = 20.0
+metadata/_custom_type_script = "uid://c7dq7dbj701rh"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cbxnk"]
+size = Vector2(30, 30)
+
+[sub_resource type="PackedScene" id="PackedScene_3hlbk"]
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"id_paths": [PackedInt32Array(), PackedInt32Array()],
+"names": PackedStringArray("bullet", "Area2D", "script", "BulletSprite", "CollisionShape2D", "CollisionShape2D", "shape", "Sprite2D", "Sprite2D"),
+"node_count": 3,
+"node_ids": PackedInt32Array(272352768, 1159379052, 1451587912),
+"node_paths": [NodePath("."), NodePath(".")],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 2, 2, 0, 1073741827, 1, 0, 1073741824, 0, 5, 4, -1, 1, 6, 2, 0, 1073741825, 0, 8, 7, -1, 0, 0),
+"variants": [ExtResource("4_rox1e"), NodePath("Sprite2D"), SubResource("RectangleShape2D_cbxnk")],
+"version": 3
+}
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3hlbk"]
+load_path = "res://.godot/imported/PikeSwing.png-2cca3420078a25ae402483c8ee348995.ctex"
+
+[sub_resource type="Resource" id="Resource_6usux"]
+script = ExtResource("5_yjxke")
+BulletResourceScene = SubResource("PackedScene_3hlbk")
+Icon = SubResource("CompressedTexture2D_3hlbk")
+Speed = 60.0
+Damage = 5.0
+LifeTime = 0.785
+SpawnAngle = 0.785
+metadata/_custom_type_script = "uid://c4ypseweqfmmv"
+
+[sub_resource type="Resource" id="Resource_j8dte"]
+script = ExtResource("6_wl2xb")
+Bullet = SubResource("Resource_6usux")
+Damage = 5.0
+AttackSpeed = 2.0
+Count = 1
+AttackDistance = 80.0
+SpawnOffset = 30.0
+metadata/_custom_type_script = "uid://bpfif762meayr"
+
+[resource]
+script = ExtResource("1_tjmah")
+unitBody = ExtResource("3_6usux")
+weapon = SubResource("Resource_j8dte")
+stats = SubResource("Resource_srt2h")
+metadata/_custom_type_script = "uid://druednhiunuuk"

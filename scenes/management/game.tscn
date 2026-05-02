@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://2m4fhvk4n8bv" path="res://scripts/game/Game.cs" id="1_6ugtm"]
 [ext_resource type="PackedScene" uid="uid://c6o4o7vvuf4ap" path="res://scenes/ui/pause_ui.tscn" id="2_er5mi"]
 [ext_resource type="PackedScene" uid="uid://movqo185l5gd" path="res://scenes/ui/enemy_ui.tscn" id="3_gnew2"]
+[ext_resource type="Texture2D" uid="uid://b08fogu2itvh4" path="res://assets/ui/button.png" id="4_5x40n"]
 
 [node name="Game" type="Node2D" unique_id=1955143492]
 script = ExtResource("1_6ugtm")
@@ -12,7 +13,25 @@ script = ExtResource("1_6ugtm")
 [node name="UI" type="CanvasLayer" parent="." unique_id=1540372164]
 
 [node name="PauseUI" parent="UI" unique_id=1834776443 instance=ExtResource("2_er5mi")]
+anchors_preset = -1
+anchor_right = 0.522
+anchor_bottom = 0.544
+offset_left = -3.0
+offset_right = -42.24005
+offset_bottom = -47.52002
 
 [node name="EnemyUI" parent="UI" unique_id=758637822 instance=ExtResource("3_gnew2")]
+
+[node name="StartFightButton" type="Button" parent="UI" unique_id=887038118]
+texture_filter = 3
+offset_left = 855.0
+offset_top = 981.0
+offset_right = 1059.0
+offset_bottom = 1084.0
+text = "Start battle"
+icon = ExtResource("4_5x40n")
+flat = true
+icon_alignment = 1
+expand_icon = true
 
 [node name="NoDestroy" type="Node2D" parent="." unique_id=2055974417]

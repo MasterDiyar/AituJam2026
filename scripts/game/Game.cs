@@ -6,6 +6,7 @@ public partial class Game : Node2D
 	public Node2D Pausable, NoDestroy;
 	public CanvasLayer UI;
 	public PauseUi pauseUi;
+	public Arena Arena;
 	public override void _Ready()
 	{
 		Pausable = GetNode<Node2D>("Pausable");
@@ -16,6 +17,12 @@ public partial class Game : Node2D
 		GameManager.Instance.NoDestroy =  NoDestroy;
 		GameManager.Instance.UI = UI;
 		GameManager.Instance.PauseUI = pauseUi;
+		
+	}
+
+	public void AfterInit()
+	{
+		Arena.StartFight = UI.GetNode<Button>("StartFightButton");
 	}
 
 	public override void _Input(InputEvent @event)

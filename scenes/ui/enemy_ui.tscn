@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bdtuwxmw1lfat" path="res://assets/ui/Person.png" id="1_ioeec"]
 [ext_resource type="Script" uid="uid://dbmmdk45g8ovr" path="res://scripts/ui/EnemyUi.cs" id="1_vf4ou"]
 [ext_resource type="FontFile" uid="uid://dwwy72kh06k47" path="res://assets/fonts/Darinia/Darinia.ttf" id="2_7d8yk"]
+[ext_resource type="PackedScene" uid="uid://e2qpea42ndwm" path="res://scenes/management/working_deck.tscn" id="4_bx3jp"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_vf4ou"]
 font = ExtResource("2_7d8yk")
@@ -46,3 +47,8 @@ offset_right = 494.0
 offset_bottom = 186.0
 text = "Otto Von Bismark"
 label_settings = SubResource("LabelSettings_vf4ou")
+
+[node name="WorkingDeck" parent="." unique_id=250504512 instance=ExtResource("4_bx3jp")]
+layout_mode = 0
+offset_left = -1920.0
+offset_right = -1920.0

@@ -9,17 +9,20 @@
 [ext_resource type="Texture2D" uid="uid://6eu0ok2erh0i" path="res://assets/texture/order/Backward.png" id="7_qqcao"]
 [ext_resource type="Texture2D" uid="uid://dnolfv4d7g3pr" path="res://assets/texture/order/Rush.png" id="8_wcgrq"]
 
-[node name="WorkingDeck" type="Node2D" unique_id=1306240071 node_paths=PackedStringArray("units")]
+[node name="WorkingDeck" type="Control" unique_id=250504512 node_paths=PackedStringArray("units")]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_g50ai")
 units = []
 actions = Array[int]([0, 4, 2])
 timePerAction = 1.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1785348634]
-offset_left = 693.0
-offset_top = 61.0
-offset_right = 944.0
-offset_bottom = 117.0
+layout_mode = 0
+offset_left = 1459.0
+offset_top = 22.0
+offset_right = 1710.0
+offset_bottom = 78.0
 script = ExtResource("2_wcgsw")
 Textures = Dictionary[int, Texture2D]({
 0: ExtResource("3_bf6om"),

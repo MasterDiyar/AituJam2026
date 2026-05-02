@@ -12,10 +12,13 @@ public partial class Menu : Control
 	void OnPlay()
 	{
 		var scene =  GD.Load<PackedScene>("res://scenes/management/game.tscn").Instantiate<Game>();
-		var arena = GD.Load<PackedScene>("res://scenes/maps/arena.tscn").Instantiate();
+		var arena = GD.Load<PackedScene>("res://scenes/maps/arena.tscn").Instantiate<Arena>();
 		
 		GetParent().AddChild(scene);
 		scene.Pausable.AddChild(arena); 
+		scene.Arena = arena;
+		scene.AfterInit();
+		arena.AfterInit();
 		QueueFree();
 	}
 }

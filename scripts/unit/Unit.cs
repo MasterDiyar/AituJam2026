@@ -17,7 +17,7 @@ public partial class Unit : CharacterBody2D, IDamagable
 
     public override void _Ready()
     {
-        Stats.SetStats(this);
+        Stats?.SetStats(this);
         InputEvent += OnInputEvent;
     }
 

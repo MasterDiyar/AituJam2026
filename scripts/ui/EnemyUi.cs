@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using AITUJAM2026.scripts.unit;
 
 public partial class EnemyUi : Control
 {
@@ -14,6 +15,7 @@ public partial class EnemyUi : Control
 	readonly Vector2 startPos = new(1152, 0), endPos = new(1152, -192);
 	bool whereMove = false;
 	Tween moveTween;
+	[Export] private Deck WorkingDeck;
 
 	public void ToggleUi(bool toggler)
 	{

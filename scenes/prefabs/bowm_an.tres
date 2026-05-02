@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="UnitResource" format=3 uid="uid://dfbraxahj50yp"]
+
+[ext_resource type="Texture2D" uid="uid://bp6s5r6w8kwpe" path="res://assets/texture/mobs/torso.png" id="1_lsjit"]
+[ext_resource type="Texture2D" uid="uid://dwjow71o3jsyo" path="res://assets/texture/mobs/colchuga.png" id="2_gcuqv"]
+[ext_resource type="Texture2D" uid="uid://djxwphjb7wux2" path="res://assets/texture/mobs/warHat1.png" id="3_lbctb"]
+[ext_resource type="Texture2D" uid="uid://b3r7kmsis08vh" path="res://assets/texture/mobs/Head2.png" id="4_lsjit"]
+[ext_resource type="Texture2D" uid="uid://dxv3w7ty3e62w" path="res://assets/texture/mobs/pike.png" id="5_pd6ye"]
+[ext_resource type="Script" uid="uid://ds3wo1i33pg8r" path="res://scripts/resources/UnitResource.cs" id="6_3eaim"]
+
+[resource]
+script = ExtResource("6_3eaim")
+Body = ExtResource("1_lsjit")
+Cloth = ExtResource("2_gcuqv")
+Head = ExtResource("4_lsjit")
+Hat = ExtResource("3_lbctb")
+Weapon = ExtResource("5_pd6ye")
+metadata/_custom_type_script = "uid://ds3wo1i33pg8r"

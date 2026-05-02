@@ -1,0 +1,64 @@
+[gd_resource type="Resource" script_class="UnitBuilder" format=3 uid="uid://cw3slxikax62p"]
+
+[ext_resource type="Script" uid="uid://druednhiunuuk" path="res://scripts/resources/UnitBuilder.cs" id="1_nvef4"]
+[ext_resource type="Script" uid="uid://c7dq7dbj701rh" path="res://scripts/resources/AboutResource.cs" id="2_mpw58"]
+[ext_resource type="Resource" uid="uid://dc8nd5rijpdk2" path="res://scenes/prefabs/kopie_ton_body.tres" id="3_e040o"]
+[ext_resource type="Script" uid="uid://c6ssf02wfkc24" path="res://scripts/weapons/Bullet.cs" id="4_qvgpf"]
+[ext_resource type="Script" uid="uid://c4ypseweqfmmv" path="res://scripts/resources/BulletResource.cs" id="5_guy01"]
+[ext_resource type="Script" uid="uid://bpfif762meayr" path="res://scripts/resources/WeaponResource.cs" id="6_jvb14"]
+
+[sub_resource type="Resource" id="Resource_srt2h"]
+script = ExtResource("2_mpw58")
+MaxHp = 90.0
+MaxArmor = 20.0
+MaxAbsorbtion = 2.0
+DefaultDamage = 90.0
+KritChance = 0.5
+KritDamage = 20.0
+MaxSpeed = 20.0
+metadata/_custom_type_script = "uid://c7dq7dbj701rh"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cbxnk"]
+size = Vector2(30, 30)
+
+[sub_resource type="PackedScene" id="PackedScene_nvef4"]
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"id_paths": [PackedInt32Array(), PackedInt32Array()],
+"names": PackedStringArray("bullet", "Area2D", "script", "BulletSprite", "CollisionShape2D", "CollisionShape2D", "shape", "Sprite2D", "Sprite2D"),
+"node_count": 3,
+"node_ids": PackedInt32Array(272352768, 1159379052, 1451587912),
+"node_paths": [NodePath("."), NodePath(".")],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 2, 2, 0, 1073741827, 1, 0, 1073741824, 0, 5, 4, -1, 1, 6, 2, 0, 1073741825, 0, 8, 7, -1, 0, 0),
+"variants": [ExtResource("4_qvgpf"), NodePath("Sprite2D"), SubResource("RectangleShape2D_cbxnk")],
+"version": 3
+}
+
+[sub_resource type="Resource" id="Resource_mpw58"]
+script = ExtResource("5_guy01")
+BulletResourceScene = SubResource("PackedScene_nvef4")
+Speed = 210.0
+Damage = 4.0
+LifeTime = 6.0
+Consume = 6.0
+SpawnAngle = 0.785
+metadata/_custom_type_script = "uid://c4ypseweqfmmv"
+
+[sub_resource type="Resource" id="Resource_e040o"]
+script = ExtResource("6_jvb14")
+Bullet = SubResource("Resource_mpw58")
+Damage = 3.0
+AttackSpeed = 2.0
+Count = 1
+AttackDistance = 80.0
+SpawnOffset = 30.0
+metadata/_custom_type_script = "uid://bpfif762meayr"
+
+[resource]
+script = ExtResource("1_nvef4")
+unitBody = ExtResource("3_e040o")
+weapon = SubResource("Resource_e040o")
+stats = SubResource("Resource_srt2h")
+metadata/_custom_type_script = "uid://druednhiunuuk"

@@ -3,12 +3,14 @@
 [ext_resource type="Script" uid="uid://bxmg26s4csy4u" path="res://scripts/game/Arena.cs" id="1_uv8r2"]
 [ext_resource type="PackedScene" uid="uid://cmwd65bv6a5xo" path="res://scenes/maps/grass.tscn" id="1_xii62"]
 
-[node name="Arena" type="Node2D" unique_id=655739801]
+[node name="Arena" type="Node2D" unique_id=655739801 node_paths=PackedStringArray("camera")]
 script = ExtResource("1_uv8r2")
+camera = NodePath("Camera2D")
 
 [node name="grass" parent="." unique_id=1565852210 instance=ExtResource("1_xii62")]
 z_index = -2
+position = Vector2(0, 800)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=791779951]
-position = Vector2(0, 540)
+position = Vector2(0, 800)
 anchor_mode = 0
