@@ -54,7 +54,7 @@ Bullet = SubResource("Resource_mpw58")
 Damage = 3.0
 AttackSpeed = 2.5
 Count = 1
-AttackDistance = 80.0
+AttackDistance = 350.0
 SpawnOffset = 30.0
 metadata/_custom_type_script = "uid://bpfif762meayr"
 

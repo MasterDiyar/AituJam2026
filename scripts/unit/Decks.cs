@@ -4,6 +4,18 @@ namespace AITUJAM2026.scripts.unit;
 using UA = UnitActions;
 public static class Decks
 {
+    public static UnitBuilder
+            kopie_ton = GD.Load<UnitBuilder>("res://scenes/prefabs/kopie_ton_builder.tres"),
+            bowm_an = GD.Load<UnitBuilder>("res://scenes/prefabs/bowm_an_builder.tres"),
+            topo_ric = GD.Load<UnitBuilder>("res://scenes/prefabs/topo_ric_builder.tres"),
+            mech_nick = GD.Load<UnitBuilder>("res://scenes/prefabs/mech_nick_builder.tres");
+    
+    public static UnitBuilder WithCount(UnitBuilder builder, int count)
+    {
+        var newBuilder = (UnitBuilder)builder.Duplicate();
+        newBuilder.count = count;
+        return newBuilder;
+    }
     
     public static Godot.Collections.Array<UA>[] PreMadeActions =
     [
@@ -14,13 +26,11 @@ public static class Decks
         [UA.Attack, UA.Heal],
         [UA.Rush, UA.GoBackward]
     ];
-
-    public static UnitBuilder[] PreMadeUnits =
-    [
-        
-    ];
     
-    public static Godot.Collections.Array<UnitBuilder>[] PreMadeUnitDecks= [
-    []
+    public static readonly Godot.Collections.Array<UnitBuilder>[] PreMadeUnitDecks= [
+        [WithCount(kopie_ton, 4)], 
+        [WithCount(bowm_an, 2), WithCount(kopie_ton, 3)],
+        [WithCount(bowm_an, 3), WithCount(topo_ric, 3)],
+        [WithCount(topo_ric, 5), WithCount(mech_nick, 4)]
     ];
 }

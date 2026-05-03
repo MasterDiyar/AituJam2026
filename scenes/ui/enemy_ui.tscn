@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://dbmmdk45g8ovr" path="res://scripts/ui/EnemyUi.cs" id="1_vf4ou"]
 [ext_resource type="FontFile" uid="uid://dwwy72kh06k47" path="res://assets/fonts/Darinia/Darinia.ttf" id="2_7d8yk"]
 [ext_resource type="PackedScene" uid="uid://e2qpea42ndwm" path="res://scenes/management/working_deck.tscn" id="4_bx3jp"]
+[ext_resource type="PackedScene" uid="uid://cbm3er54siuxb" path="res://scenes/test/test_control.tscn" id="5_f2n00"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_vf4ou"]
 font = ExtResource("2_7d8yk")
@@ -13,7 +14,7 @@ outline_size = 1
 shadow_color = Color(0, 0, 0, 0.70980394)
 shadow_offset = Vector2(0.5, 0.5)
 
-[node name="EnemyUI" type="Control" unique_id=758637822 node_paths=PackedStringArray("Portrait", "NameLabel")]
+[node name="EnemyUI" type="Control" unique_id=758637822 node_paths=PackedStringArray("Portrait", "WorkingDeck", "NameLabel")]
 texture_filter = 3
 layout_mode = 3
 anchors_preset = 1
@@ -22,6 +23,7 @@ anchor_right = 1.0
 grow_horizontal = 0
 script = ExtResource("1_vf4ou")
 Portrait = NodePath("TextureRect/Face")
+WorkingDeck = NodePath("WorkingDeck")
 NameLabel = NodePath("TextureRect/Label")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=331371469]
@@ -52,3 +54,14 @@ label_settings = SubResource("LabelSettings_vf4ou")
 layout_mode = 0
 offset_left = -1920.0
 offset_right = -1920.0
+team = 1
+timePerAction = 3.0
+
+[node name="TestControl" parent="." unique_id=273127478 instance=ExtResource("5_f2n00")]
+layout_mode = 1
+offset_left = -1920.0
+offset_top = 350.0
+offset_right = -1920.0
+offset_bottom = 350.0
+actions = Array[int]([])
+timePerAction = 5.0

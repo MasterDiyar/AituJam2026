@@ -33,6 +33,7 @@ project/assembly_name="AITUJAM2026"
 
 folder_colors={
 "res://assets/": "yellow",
+"res://scenes/prefabs/": "red",
 "res://scripts/": "blue"
 }
 

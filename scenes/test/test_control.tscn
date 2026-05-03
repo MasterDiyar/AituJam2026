@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://d1bti5w7lwj8q" path="res://scripts/unit/Deck.cs" id="1_fateh"]
 [ext_resource type="Script" uid="uid://bto1pmip21pjv" path="res://scripts/test/TestControll.cs" id="2_6jk0j"]
+[ext_resource type="FontFile" uid="uid://dwwy72kh06k47" path="res://assets/fonts/Darinia/Darinia.ttf" id="2_nretf"]
+[ext_resource type="Texture2D" uid="uid://cwlpheeiqm7tk" path="res://assets/ui/foliant.png" id="3_vc1ir"]
 
 [node name="TestControl" type="Control" unique_id=273127478 node_paths=PackedStringArray("units")]
 layout_mode = 3
@@ -14,36 +16,82 @@ script = ExtResource("1_fateh")
 units = []
 
 [node name="Button" type="Button" parent="." unique_id=912218944]
+custom_minimum_size = Vector2(48, 64)
 layout_mode = 0
-offset_left = 84.0
-offset_top = 565.0
-offset_right = 167.0
-offset_bottom = 627.0
-text = "forward"
+offset_left = 41.0
+offset_top = 942.0
+offset_right = 137.0
+offset_bottom = 1070.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.13352576, 0.14706504, 0.1504496, 1)
+theme_override_colors/font_pressed_color = Color(0.19434929, 0.19434926, 0.19434926, 1)
+theme_override_fonts/font = ExtResource("2_nretf")
+text = "for
+ward"
+icon = ExtResource("3_vc1ir")
+flat = true
+text_overrun_behavior = 2
+autowrap_mode = 1
+icon_alignment = 1
+expand_icon = true
 
 [node name="Button2" type="Button" parent="." unique_id=402155163]
+custom_minimum_size = Vector2(48, 64)
 layout_mode = 0
-offset_left = 177.0
-offset_top = 567.0
-offset_right = 260.0
-offset_bottom = 629.0
-text = "backward"
+offset_left = 134.0
+offset_top = 942.0
+offset_right = 230.0
+offset_bottom = 1070.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.13352576, 0.14706504, 0.1504496, 1)
+theme_override_colors/font_pressed_color = Color(0.19434929, 0.19434926, 0.19434926, 1)
+theme_override_fonts/font = ExtResource("2_nretf")
+text = "back
+ward"
+icon = ExtResource("3_vc1ir")
+flat = true
+text_overrun_behavior = 2
+autowrap_mode = 1
+icon_alignment = 1
+expand_icon = true
 
 [node name="Button3" type="Button" parent="." unique_id=1617769280]
+custom_minimum_size = Vector2(48, 64)
 layout_mode = 0
-offset_left = 274.0
-offset_top = 567.0
-offset_right = 357.0
-offset_bottom = 629.0
+offset_left = 231.0
+offset_top = 942.0
+offset_right = 327.0
+offset_bottom = 1070.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.13352576, 0.14706504, 0.1504496, 1)
+theme_override_colors/font_pressed_color = Color(0.19434929, 0.19434926, 0.19434926, 1)
+theme_override_fonts/font = ExtResource("2_nretf")
 text = "attack"
+icon = ExtResource("3_vc1ir")
+flat = true
+text_overrun_behavior = 2
+autowrap_mode = 1
+icon_alignment = 1
+expand_icon = true
 
 [node name="Button4" type="Button" parent="." unique_id=1867717986]
+custom_minimum_size = Vector2(48, 64)
 layout_mode = 0
-offset_left = 372.0
-offset_top = 569.0
-offset_right = 455.0
-offset_bottom = 631.0
+offset_left = 329.0
+offset_top = 942.0
+offset_right = 425.0
+offset_bottom = 1070.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.13352576, 0.14706504, 0.1504496, 1)
+theme_override_colors/font_pressed_color = Color(0.19434929, 0.19434926, 0.19434926, 1)
+theme_override_fonts/font = ExtResource("2_nretf")
 text = "heal"
+icon = ExtResource("3_vc1ir")
+flat = true
+text_overrun_behavior = 2
+autowrap_mode = 1
+icon_alignment = 1
+expand_icon = true
 
 [node name="test" type="Node" parent="." unique_id=55057920 node_paths=PackedStringArray("forward", "backward", "attack", "heal")]
 script = ExtResource("2_6jk0j")

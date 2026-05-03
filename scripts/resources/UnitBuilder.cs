@@ -4,12 +4,11 @@ using Godot;
 [GlobalClass]
 public partial class UnitBuilder : Resource
 {
-    [Export] UnitResource unitBody;
-
+    [Export] public UnitResource unitBody;
     [Export] private WeaponResource weapon;
     [Export] private AboutResource stats;
 
-    [Export] private int count = 1;
+    [Export] public int count = 1;
     
 
     PackedScene unitScene = GD.Load<PackedScene>("res://scenes/unit/unit.tscn");
@@ -19,12 +18,15 @@ public partial class UnitBuilder : Resource
         var unit = unitScene.Instantiate<Unit>();
         unit.Body.uResource = unitBody;
         unit.Stats = stats;
+        unit.Weapon.WeaponInstance = weapon;
         unit.UnitFaction = unitFaction;
         
         unit.Stats.SetStats(unit);
 
         return unit;
     }
+    
+    public UnitBuilder() { }
 
     public UnitBuilder(UnitResource unit, WeaponResource weapon, AboutResource stats, int count)
     {

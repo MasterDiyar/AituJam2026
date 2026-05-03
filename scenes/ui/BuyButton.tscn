@@ -6,8 +6,8 @@
 
 [node name="Button" type="Button" unique_id=1548507051]
 texture_filter = 3
-offset_right = 78.0
-offset_bottom = 27.0
+offset_right = 64.0
+offset_bottom = 32.0
 theme_override_colors/font_color = Color(0.080783166, 0.08078342, 0.080783226, 1)
 theme_override_colors/font_focus_color = Color(0.22310266, 0.22310293, 0.22310343, 1)
 theme_override_colors/font_pressed_color = Color(0.3854925, 0.38549247, 0.38549247, 1)

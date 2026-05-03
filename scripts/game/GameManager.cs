@@ -9,6 +9,7 @@ public partial class GameManager : Node
 	public PauseUi PauseUI;
 	public Game Game;
 	public CanvasLayer UI;
+	public Arena Arena;
 	
 	bool isPaused = false;
 

@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using AITUJAM2026.scripts.unit;
 
 public partial class BuyButton : Button
 {
@@ -15,6 +16,8 @@ public partial class BuyButton : Button
 	[Export] private float price;
 	[Export] private CanvasItem hidingSprite;
 
+	private UnitBuilder[] link = [Decks.kopie_ton, Decks.bowm_an, Decks.topo_ric, Decks.mech_nick];
+
 	public override void _Ready()
 	{
 		Pressed += OnPressed;
@@ -26,7 +29,7 @@ public partial class BuyButton : Button
 		switch (pressAction)
 		{
 			case PressAction.Tent:
-				GD.Print("Tent");
+				GameManager.Instance.Arena.AddUnitToArmy(link[GD.RandRange(0, link.Length)], true);
 				break;
 			case PressAction.Farm:
 				GameManager.Instance.AddictiveHp += 4;

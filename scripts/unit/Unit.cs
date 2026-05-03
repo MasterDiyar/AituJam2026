@@ -35,11 +35,20 @@ public partial class Unit : CharacterBody2D, IDamagable
         Hp -= damage * armorMultiplier;
         GD.Print("Hp: " + Hp);
         
-        if (Hp <= 0) QueueFree();
+        if (Hp <= 0) ExecuteDeath();
     }
 
     public void Heal(float heal)
     {
         Hp = Mathf.Min(Hp + heal, MaxHp);
+    }
+
+    public void ExecuteDeath()
+    {
+        var gay = GetParent().GetParent<Game>();
+        if (UnitFaction == Faction.Enemy) gay.enemyUnitCount--;
+        if (UnitFaction == Faction.Player) gay.playerUnitCount--;
+        gay.OneDie();
+        QueueFree();
     }
 }

@@ -4,18 +4,18 @@ using AITUJAM2026.scripts.unit;
 
 public partial class EnemyUi : Control
 {
-	private string[] Names = [
-	"WanderBraun", "Otto von Altmark", "Otton", "Leon Torres", "Adolf Fides", "Fidel Barren", "Aleksander Vanz",
+	public string[] Names = [
+	"WanderBraun", "Wilhelm II", "Otto der Große", "Leon Torres", "Adolf Fides", "Fidel Barren", "Aleksander Vanz",
 	"Leon Frank", 
 	], Links = ["Matveh", "Josua", "Vladislav"];
 
 	[Export] private TextureRect Portrait;
-	
+	[Export] public Deck WorkingDeck;
 	[Export] private Label NameLabel;
 	readonly Vector2 startPos = new(1920, 0), endPos = new(1920, -192);
 	bool whereMove = false;
 	Tween moveTween;
-	[Export] private Deck WorkingDeck;
+	
 
 	public void ToggleUi(bool toggler)
 	{
@@ -25,24 +25,21 @@ public partial class EnemyUi : Control
 		moveTween = CreateTween();
         
 		Vector2 targetPos = toggler ? startPos : endPos;
-
-		if (toggler)
-			SetRandomPerson();
 		
 		moveTween.TweenProperty(this, "position", targetPos, 0.5f)
 			.SetTrans(Tween.TransitionType.Back) 
 			.SetEase(Tween.EaseType.Out);
 	}
 
-
-	private void SetRandomPerson()
-	{
-		NameLabel.Text = Names[new Random().Next(0, Names.Length)];
-		Portrait.Texture = GD.Load<Texture2D>($"res://assets/texture/heads/{Links[new Random().Next(0, Links.Length)]}.png");
-	}
-
 	public override void _Ready()
 	{
 		ToggleUi(false);
+	}
+	
+	public void UpdateDisplay(string name, string link, Godot.Collections.Array<UnitActions> actions)
+	{
+		NameLabel.Text = name;
+		Portrait.Texture = GD.Load<Texture2D>($"res://assets/texture/heads/{link}.png");
+		WorkingDeck.actions = actions;
 	}
 }

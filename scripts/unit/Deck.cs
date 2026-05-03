@@ -26,6 +26,8 @@ public partial class Deck : Node
         timer.WaitTime = timePerAction;
         timer.Start();
         timer.Timeout += TimerOnTimeout;
+        
+        if (actions.Count ==0) actions.Add(UnitActions.Idle);
     }
 
     private void TimerOnTimeout()
