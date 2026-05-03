@@ -11,6 +11,7 @@ public partial class Arena : Node2D
 	[Export] public Button StartFight;
 	[Export] public Camera2D camera;
 	[Export] public GridContainer _mobsGrid;
+	[Export] public OptionButton _defaultArmy;
 
 	public  List<Unit> EnemyUnits = [], PlayerUnits = [];
 	public  List<UnitBuilder> FullTimeUnits = [], OneTimeUnits = [];
@@ -18,6 +19,8 @@ public partial class Arena : Node2D
 	private EnemyUi _enemyUi;
 	private Deck _testDeck;
 	private Tween _tween;
+
+	private Button wheat1, wheat2;
 	
 	private bool  isFightStarted = false ,isPlayerWinner = false;
 	private int   Level = 1;
@@ -66,14 +69,19 @@ public partial class Arena : Node2D
 		Level++;
 		GameManager.Instance.Money += WinCoins;
 		GameManager.Instance.Food += WinFood;
-		OneTimeUnits = [];
-		RemoveUnitFromArmy();
-		ToggleMove(true);
+		WarEnd();
 	}
 
 	public void OnLoose()
 	{
-		
+		WarEnd();
+	}
+
+	void WarEnd()
+	{
+		OneTimeUnits = [];
+		wheat1.Disabled = false;
+		wheat2.Disabled = false;
 		RemoveUnitFromArmy();
 		ToggleMove(true);
 	}
@@ -83,28 +91,48 @@ public partial class Arena : Node2D
 		_enemyUi = GameManager.Instance.UI.GetNode<EnemyUi>("EnemyUI");
 		_testDeck = _enemyUi.GetNode<Deck>("TestControl");	
 		AddUnitToArmy(Decks.kopie_ton, true);
+		wheat1 = GetNode<Button>("grass/WindMill/Button");
+		wheat2 = GetNode<Button>("grass/WindMill2/Button2");
+		wheat1.Pressed += () => OnTaxesGet(wheat1);
+		wheat2.Pressed += () => OnTaxesGet(wheat2);
+	}
+
+
+	public void OnTaxesGet(Button btn)
+	{
+		btn.Disabled = true;
+		GameManager.Instance.Money += 1;
+		GameManager.Instance.Food  += 4;
 	}
 
 	public void SpawnEnemyMobs(int level)
 	{
-		_enemyUi.WorkingDeck.units.Clear();
+		EnemyUnits.Clear();
+
+		_enemyUi.WorkingDeck.units = [];
+		if (level >= Decks.PreMadeUnitDecks.Length) level = Decks.PreMadeUnitDecks.Length - 1;
+    
 		var deck = Decks.PreMadeUnitDecks[level];
+
 		for (var j = 0; j < deck.Count; j++) {
 			var unitBuilder = deck[j];
 			for (var i = 0; i < unitBuilder.count; i++) {
 				var unit = unitBuilder.Setup(Faction.Enemy);
-				unit.Position = _mobSpawnPosition + new Vector2(64*i, 64*j);
+				unit.Position = _mobSpawnPosition + new Vector2(64 * i, 64 * j);
+          
 				GameManager.Instance.Pausable.AddChild(unit);
 				EnemyUnits.Add(unit);
 			}
 		}
-		_enemyUi.WorkingDeck.units = new Array<Unit>(EnemyUnits);
+		_enemyUi.WorkingDeck.units = new (EnemyUnits);
 		_enemyUi.WorkingDeck.timer.Start();
+		
 	}
 
 	public void SpawnPlayerUnits()
 	{
-		_testDeck.units.Clear();
+		PlayerUnits.Clear();
+		_testDeck.units = [];
 		for (var i = 0; i < FullTimeUnits.Count; i++) {
 			var unit = FullTimeUnits[i].Setup(Faction.Player);
 			unit.Position = _playerSpawnPosition + new Vector2(64*i, 0);
@@ -116,8 +144,7 @@ public partial class Arena : Node2D
 			GameManager.Instance.Pausable.AddChild(unit);
 			PlayerUnits.Add(unit);
 		}
-
-		_testDeck.units = (new Array<Unit>(PlayerUnits));
+		_testDeck.units = new Array<Unit>(PlayerUnits);
 	}
 	
 	public void AddUnitToArmy(UnitBuilder builder, bool isPermanent)

@@ -17,12 +17,9 @@ public partial class UnitBody : Node2D
 	{
 		switch (attackType)
 		{
-		case AITUJAM2026.scripts.Weapon.AttackType.Bow:break;
 		case AITUJAM2026.scripts.Weapon.AttackType.Pike:Pike(angle, length, time, weaponAngleOffset);break;
 		case AITUJAM2026.scripts.Weapon.AttackType.Sword:Sword(angle, length, time, weaponAngleOffset);break;
 		}
-
-		
 	}
 
 	void Pike(float angle, float length, float time, float weaponAngleOffset = 0)

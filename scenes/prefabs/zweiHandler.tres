@@ -1,0 +1,64 @@
+[gd_resource type="Resource" script_class="UnitBuilder" format=3 uid="uid://ciy7n1op1u72y"]
+
+[ext_resource type="Script" uid="uid://druednhiunuuk" path="res://scripts/resources/UnitBuilder.cs" id="1_y73ry"]
+[ext_resource type="Script" uid="uid://c7dq7dbj701rh" path="res://scripts/resources/AboutResource.cs" id="2_rcjxx"]
+[ext_resource type="Texture2D" uid="uid://bp6s5r6w8kwpe" path="res://assets/texture/mobs/torso.png" id="3_yl4wk"]
+[ext_resource type="Texture2D" uid="uid://bcfrdiogoe0nk" path="res://assets/texture/mobs/kirasa.png" id="4_ce4j7"]
+[ext_resource type="Texture2D" uid="uid://du026ay5unrn3" path="res://assets/texture/mobs/warHat2.png" id="5_23lxj"]
+[ext_resource type="Texture2D" uid="uid://dl6g5rfvkrai" path="res://assets/texture/mobs/Head1.png" id="6_4mr2i"]
+[ext_resource type="Texture2D" uid="uid://crg0pjj8e2frb" path="res://assets/texture/mobs/double.png" id="7_y73ry"]
+[ext_resource type="Script" uid="uid://ds3wo1i33pg8r" path="res://scripts/resources/UnitResource.cs" id="8_hs1dc"]
+[ext_resource type="PackedScene" uid="uid://ye5518wgslml" path="res://scenes/unit/bullet.tscn" id="9_jhmhm"]
+[ext_resource type="Texture2D" uid="uid://bm4p5rlfkilfg" path="res://assets/texture/mobs/swing.png" id="10_81qgr"]
+[ext_resource type="Script" uid="uid://c4ypseweqfmmv" path="res://scripts/resources/BulletResource.cs" id="11_aadjf"]
+[ext_resource type="Script" uid="uid://bpfif762meayr" path="res://scripts/resources/WeaponResource.cs" id="12_rxr2g"]
+
+[sub_resource type="Resource" id="Resource_rcjxx"]
+script = ExtResource("2_rcjxx")
+MaxHp = 110.0
+MaxArmor = 10.0
+MaxAbsorbtion = 4.0
+DefaultDamage = 5.0
+KritChance = 5.0
+KritDamage = 20.0
+MaxSpeed = 32.0
+metadata/_custom_type_script = "uid://c7dq7dbj701rh"
+
+[sub_resource type="Resource" id="Resource_yl4wk"]
+script = ExtResource("8_hs1dc")
+Body = ExtResource("3_yl4wk")
+Cloth = ExtResource("4_ce4j7")
+Head = ExtResource("6_4mr2i")
+Hat = ExtResource("5_23lxj")
+Weapon = ExtResource("7_y73ry")
+Secondary = ExtResource("7_y73ry")
+metadata/_custom_type_script = "uid://ds3wo1i33pg8r"
+
+[sub_resource type="Resource" id="Resource_ce4j7"]
+script = ExtResource("11_aadjf")
+BulletResourceScene = ExtResource("9_jhmhm")
+Icon = ExtResource("10_81qgr")
+Speed = 10.0
+Damage = 3.0
+LifeTime = 0.5
+SpawnAngle = 0.5
+metadata/_custom_type_script = "uid://c4ypseweqfmmv"
+
+[sub_resource type="Resource" id="Resource_23lxj"]
+script = ExtResource("12_rxr2g")
+Bullet = SubResource("Resource_ce4j7")
+Damage = 8.0
+AttackSpeed = 1.0
+Count = 1
+isClose = true
+AttackDistance = 150.0
+SpawnOffset = 64.0
+AttackType = 2
+metadata/_custom_type_script = "uid://bpfif762meayr"
+
+[resource]
+script = ExtResource("1_y73ry")
+unitBody = SubResource("Resource_yl4wk")
+weapon = SubResource("Resource_23lxj")
+stats = SubResource("Resource_rcjxx")
+metadata/_custom_type_script = "uid://druednhiunuuk"

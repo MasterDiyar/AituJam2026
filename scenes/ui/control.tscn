@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://cknitraikvg0k"]
+
+[ext_resource type="Texture2D" uid="uid://37t0v3s05snd" path="res://assets/ui/coin.png" id="1_bchhi"]
+[ext_resource type="Script" uid="uid://b8qprqrytxhlt" path="res://scripts/ui/ResourceController.cs" id="1_p3k0e"]
+[ext_resource type="Texture2D" uid="uid://dfqi6ge0lrls6" path="res://assets/ui/wheat.png" id="2_p3k0e"]
+
+[node name="Control" type="Control" unique_id=1785216272 node_paths=PackedStringArray("FoodCounter", "MoneyCounter")]
+texture_filter = 3
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_p3k0e")
+FoodCounter = NodePath("Label2")
+MoneyCounter = NodePath("Label")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=888605272]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_bchhi")
+
+[node name="Label" type="Label" parent="." unique_id=1896876114]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 13.0
+offset_right = 80.0
+offset_bottom = 36.0
+text = "5"
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1445503780]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 1.0
+offset_right = 117.0
+offset_bottom = 41.0
+texture = ExtResource("2_p3k0e")
+
+[node name="Label2" type="Label" parent="." unique_id=211159502]
+layout_mode = 0
+offset_left = 116.0
+offset_top = 12.0
+offset_right = 156.0
+offset_bottom = 35.0
+text = "5"

@@ -55,6 +55,7 @@ layout_mode = 0
 offset_left = -1920.0
 offset_right = -1920.0
 team = 1
+actions = Array[int]([])
 timePerAction = 3.0
 
 [node name="TestControl" parent="." unique_id=273127478 instance=ExtResource("5_f2n00")]

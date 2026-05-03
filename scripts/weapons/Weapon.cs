@@ -15,6 +15,7 @@ public partial class Weapon : Node2D
     private AttackType type;
     [Export] private Unit Parent;
     [Export] public WeaponResource WeaponInstance;
+    [Export] AudioStreamPlayer2D Audio;
 
     private float attackTime;
     public override void _Process(double delta)
@@ -25,7 +26,12 @@ public partial class Weapon : Node2D
 
     public void Execute(float angle)
     {
+        Audio.VolumeDb = GameManager.Instance.Game.Audio.VolumeDb;
+        
+        type = WeaponInstance.AttackType;
         if (attackTime < WeaponInstance.AttackSpeed) return;
+        Audio.Stream = WeaponInstance.Sound;
+        Audio.Play();
         attackTime =  0.0f;
         Parent.Body.OnAttack(angle, WeaponInstance.AttackDistance, WeaponInstance.AttackSpeed*0.66f, type, WeaponInstance.Bullet.SpawnAngle);
         for (int i = 0; i < WeaponInstance.Count; i++) {

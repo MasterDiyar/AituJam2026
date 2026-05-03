@@ -8,6 +8,7 @@ public partial class Game : Node2D
 	public CanvasLayer UI;
 	public PauseUi pauseUi;
 	public Arena Arena;
+	public AudioStreamPlayer Audio;
 	
 	public int enemyUnitCount = 0, playerUnitCount = 0;
 	public override void _Ready()
@@ -16,6 +17,7 @@ public partial class Game : Node2D
 		UI = GetNode<CanvasLayer>("UI");
 		NoDestroy = GetNode<Node2D>("NoDestroy");
 		pauseUi = GetNode<PauseUi>("UI/PauseUI");
+		Audio = GetNode<AudioStreamPlayer>("AudioStreamPlayer");
 		GameManager.Instance.Pausable =  Pausable;
 		GameManager.Instance.NoDestroy =  NoDestroy;
 		GameManager.Instance.UI = UI;
@@ -49,12 +51,10 @@ public partial class Game : Node2D
 
 	public void OneDie()
 	{
-		if (enemyUnitCount == 0)
-		{
+		if (enemyUnitCount == 0) {
 			Arena.OnWin();
 		}
-		else if (playerUnitCount == 0)
-		{
+		else if (playerUnitCount == 0) {
 			Arena.OnLoose();
 		}
 	}

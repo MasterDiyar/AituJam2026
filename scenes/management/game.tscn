@@ -4,6 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://c6o4o7vvuf4ap" path="res://scenes/ui/pause_ui.tscn" id="2_er5mi"]
 [ext_resource type="PackedScene" uid="uid://movqo185l5gd" path="res://scenes/ui/enemy_ui.tscn" id="3_gnew2"]
 [ext_resource type="Texture2D" uid="uid://b08fogu2itvh4" path="res://assets/ui/button.png" id="4_5x40n"]
+[ext_resource type="FontFile" uid="uid://dwwy72kh06k47" path="res://assets/fonts/Darinia/Darinia.ttf" id="4_sktc8"]
+[ext_resource type="PackedScene" uid="uid://cknitraikvg0k" path="res://scenes/ui/control.tscn" id="5_3nw1e"]
+[ext_resource type="AudioStream" uid="uid://vhdgqdbrxjrw" path="res://assets/audio/mazir.mp3" id="7_5bnh8"]
 
 [node name="Game" type="Node2D" unique_id=1955143492]
 script = ExtResource("1_6ugtm")
@@ -27,11 +30,19 @@ texture_filter = 3
 offset_left = 855.0
 offset_top = 981.0
 offset_right = 1059.0
-offset_bottom = 1084.0
+offset_bottom = 1086.0
+theme_override_colors/font_color = Color(0.09019608, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_sktc8")
 text = "Start battle"
 icon = ExtResource("4_5x40n")
 flat = true
 icon_alignment = 1
 expand_icon = true
 
+[node name="Control" parent="UI" unique_id=1785216272 instance=ExtResource("5_3nw1e")]
+
 [node name="NoDestroy" type="Node2D" parent="." unique_id=2055974417]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=51719030]
+stream = ExtResource("7_5bnh8")
+volume_db = -25.852

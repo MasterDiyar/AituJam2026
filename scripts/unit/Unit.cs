@@ -10,6 +10,7 @@ public partial class Unit : CharacterBody2D, IDamagable
     [Export] public Faction UnitFaction { get; set; }
     [Export] public UnitController Controller;
     [Export] public Weapon Weapon;
+    [Export] AudioStreamPlayer2D Audio;
 
     
     public float MaxHp, MaxArmor, MaxAbsorbtion, DefaultDamage, KritChance, KritDamage, MaxSpeed;
@@ -41,6 +42,12 @@ public partial class Unit : CharacterBody2D, IDamagable
     public void Heal(float heal)
     {
         Hp = Mathf.Min(Hp + heal, MaxHp);
+    }
+
+    public override void _Process(double delta)
+    {
+        Audio.VolumeDb = GameManager.Instance.Game.Audio.VolumeDb;
+        Audio.Playing = (Velocity.Length() > 0.3f);
     }
 
     public void ExecuteDeath()

@@ -12,5 +12,6 @@ public partial class WeaponResource : Resource
     [Export] public float AttackDistance;
     [Export] public float BetWeenAngle, SpawnOffset;
     [Export] public Weapon.AttackType AttackType;
+    [Export] public AudioStream Sound;
 
 }

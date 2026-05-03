@@ -23,13 +23,18 @@ public partial class BuyButton : Button
 		Pressed += OnPressed;
 	}
 
+	[Export] private PackedScene ChooserScene;
+
 	private void OnPressed()
 	{
 		if (GameManager.Instance.Money < price) return;
+		GameManager.Instance.Money -= price;
 		switch (pressAction)
 		{
-			case PressAction.Tent:
-				GameManager.Instance.Arena.AddUnitToArmy(link[GD.RandRange(0, link.Length)], true);
+			case PressAction.Tent:var a=
+				ChooserScene.Instantiate<Control>();
+				a.Position = Position;
+				GameManager.Instance.UI.AddChild(a);
 				break;
 			case PressAction.Farm:
 				GameManager.Instance.AddictiveHp += 4;

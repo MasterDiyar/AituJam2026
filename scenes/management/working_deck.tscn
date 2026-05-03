@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://c217s35bsna2d" path="res://assets/texture/order/Forward.png" id="6_q07jj"]
 [ext_resource type="Texture2D" uid="uid://6eu0ok2erh0i" path="res://assets/texture/order/Backward.png" id="7_qqcao"]
 [ext_resource type="Texture2D" uid="uid://dnolfv4d7g3pr" path="res://assets/texture/order/Rush.png" id="8_wcgrq"]
+[ext_resource type="Texture2D" uid="uid://m7vqoqg2lgwr" path="res://assets/texture/order/Idle.png" id="9_bf6om"]
 
 [node name="WorkingDeck" type="Control" unique_id=250504512 node_paths=PackedStringArray("units", "cuntayner")]
 layout_mode = 3
@@ -30,5 +31,6 @@ Textures = Dictionary[int, Texture2D]({
 2: ExtResource("5_crgut"),
 3: ExtResource("6_q07jj"),
 4: ExtResource("7_qqcao"),
-5: ExtResource("8_wcgrq")
+5: ExtResource("8_wcgrq"),
+6: ExtResource("9_bf6om")
 })

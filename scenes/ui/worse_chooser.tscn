@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://dnja3k8vuy831"]
+
+[ext_resource type="Texture2D" uid="uid://b08fogu2itvh4" path="res://assets/ui/button.png" id="1_ljcwj"]
+[ext_resource type="Script" uid="uid://5cg833l6vs2p" path="res://scripts/ui/WorseChooser.cs" id="1_sqc18"]
+[ext_resource type="Texture2D" uid="uid://nynm858b5l07" path="res://assets/texture/mobs/pitchfork.png" id="2_gbjw2"]
+[ext_resource type="Texture2D" uid="uid://dxv3w7ty3e62w" path="res://assets/texture/mobs/pike.png" id="3_tb6od"]
+[ext_resource type="Texture2D" uid="uid://crg0pjj8e2frb" path="res://assets/texture/mobs/double.png" id="4_sqc18"]
+
+[node name="WorseChooser" type="Control" unique_id=769171840]
+texture_filter = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sqc18")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=950572710]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=629559850]
+custom_minimum_size = Vector2(128, 64)
+layout_mode = 2
+tooltip_text = "2 Food"
+icon = ExtResource("1_ljcwj")
+flat = true
+expand_icon = true
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Button" unique_id=356872499]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -24.0
+offset_right = 16.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_gbjw2")
+expand_mode = 1
+
+[node name="Button2" type="Button" parent="VBoxContainer" unique_id=1907924596]
+custom_minimum_size = Vector2(128, 64)
+layout_mode = 2
+tooltip_text = "3 Food"
+icon = ExtResource("1_ljcwj")
+flat = true
+expand_icon = true
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Button2" unique_id=1149710416]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -24.0
+offset_right = 16.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_tb6od")
+expand_mode = 1
+
+[node name="Button3" type="Button" parent="VBoxContainer" unique_id=2030544986]
+custom_minimum_size = Vector2(128, 64)
+layout_mode = 2
+tooltip_text = "5 Food
+"
+icon = ExtResource("1_ljcwj")
+flat = true
+expand_icon = true
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Button3" unique_id=1594739074]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -24.0
+offset_right = 16.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_sqc18")
+expand_mode = 1

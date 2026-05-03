@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://l7lybil58ucm" path="res://scenes/unit/unit_body.tscn" id="2_fvc8g"]
 [ext_resource type="PackedScene" uid="uid://dvwjlytcd53ax" path="res://scenes/unit/weapon.tscn" id="4_bhlit"]
 [ext_resource type="PackedScene" uid="uid://db2ixim3nkv1i" path="res://scenes/unit/unit_control.tscn" id="4_vgvef"]
+[ext_resource type="AudioStream" uid="uid://dr006yu05kdmh" path="res://assets/audio/e71f7cac9522561.mp3" id="5_vgvef"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fvc8g"]
 
@@ -23,3 +24,7 @@ shape = SubResource("CapsuleShape2D_fvc8g")
 
 [node name="Weapon" parent="." unique_id=2024550278 node_paths=PackedStringArray("Parent") instance=ExtResource("4_bhlit")]
 Parent = NodePath("..")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=975677272]
+stream = ExtResource("5_vgvef")
+pitch_scale = 1.88

@@ -2,7 +2,12 @@
 
 [ext_resource type="Script" uid="uid://bxmg26s4csy4u" path="res://scripts/game/Arena.cs" id="1_uv8r2"]
 [ext_resource type="PackedScene" uid="uid://cmwd65bv6a5xo" path="res://scenes/maps/grass.tscn" id="1_xii62"]
+[ext_resource type="Texture2D" uid="uid://bndtgvdmyj5mq" path="res://assets/texture/mobs/Halberd.png" id="3_xii62"]
+[ext_resource type="Texture2D" uid="uid://dptacrixo1hsb" path="res://assets/texture/mobs/sword.png" id="4_iphpr"]
 [ext_resource type="Texture2D" uid="uid://mrh8rymaq7ug" path="res://assets/ui/sbor.png" id="4_wa5pj"]
+[ext_resource type="Texture2D" uid="uid://dxv3w7ty3e62w" path="res://assets/texture/mobs/pike.png" id="5_lix01"]
+[ext_resource type="Texture2D" uid="uid://bx5kyqk10uvye" path="res://assets/texture/mobs/bow.png" id="6_6bo0k"]
+[ext_resource type="Texture2D" uid="uid://cltdvvheuwi31" path="res://assets/texture/territory/ArenaV1.png" id="8_lix01"]
 
 [node name="Arena" type="Node2D" unique_id=655739801 node_paths=PackedStringArray("camera", "_mobsGrid")]
 texture_filter = 3
@@ -32,4 +37,43 @@ z_index = -1
 position = Vector2(787, 1246)
 scale = Vector2(2, 2)
 texture = ExtResource("4_wa5pj")
+centered = false
+
+[node name="Label" type="Label" parent="." unique_id=316762176]
+offset_left = 1353.0
+offset_top = 1290.0
+offset_right = 1480.0
+offset_bottom = 1313.0
+text = "Default warriors"
+
+[node name="OptionButton" type="OptionButton" parent="Label" unique_id=611854086]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 0
+offset_left = -11.0
+offset_top = 7.0
+offset_right = 128.0
+offset_bottom = 135.0
+flat = true
+icon_alignment = 1
+expand_icon = true
+item_count = 4
+popup/item_0/icon = ExtResource("4_iphpr")
+popup/item_0/id = 0
+popup/item_1/icon = ExtResource("5_lix01")
+popup/item_1/id = 1
+popup/item_2/icon = ExtResource("6_6bo0k")
+popup/item_2/id = 2
+popup/item_3/icon = ExtResource("3_xii62")
+popup/item_3/id = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="Label" unique_id=1071330113]
+show_behind_parent = true
+position = Vector2(59, 69)
+scale = Vector2(2.119403, 2)
+texture = ExtResource("4_wa5pj")
+region_enabled = true
+region_rect = Rect2(0, 0, 67, 67)
+
+[node name="ArenaV1" type="Sprite2D" parent="." unique_id=1273113089]
+texture = ExtResource("8_lix01")
 centered = false

@@ -9,7 +9,14 @@ public partial class PauseUi : Control
 	public override void _Ready()
 	{
 		returnButton.Pressed += ReturnToGame;
+		soundButton.Pressed += ToggleSound;
 		Hide();
+	}
+	
+	void ToggleSound()
+	{
+		isSoundOn = !isSoundOn;
+		GameManager.Instance.Game.Audio.VolumeDb = isSoundOn ? -90 : -25;
 	}
 
 	void ReturnToGame()

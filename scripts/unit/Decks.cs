@@ -8,7 +8,9 @@ public static class Decks
             kopie_ton = GD.Load<UnitBuilder>("res://scenes/prefabs/kopie_ton_builder.tres"),
             bowm_an = GD.Load<UnitBuilder>("res://scenes/prefabs/bowm_an_builder.tres"),
             topo_ric = GD.Load<UnitBuilder>("res://scenes/prefabs/topo_ric_builder.tres"),
-            mech_nick = GD.Load<UnitBuilder>("res://scenes/prefabs/mech_nick_builder.tres");
+            mech_nick = GD.Load<UnitBuilder>("res://scenes/prefabs/mech_nick_builder.tres"),
+            farmberg = GD.Load<UnitBuilder>("res://scenes/prefabs/fer_mer.tres"),
+            zweih_an = GD.Load<UnitBuilder>("res://scenes/prefabs/zweiHandler.tres");
     
     public static UnitBuilder WithCount(UnitBuilder builder, int count)
     {
@@ -17,7 +19,7 @@ public static class Decks
         return newBuilder;
     }
     
-    public static Godot.Collections.Array<UA>[] PreMadeActions =
+    public static readonly Godot.Collections.Array<UA>[] PreMadeActions =
     [
         [UA.GoForward, UA.Attack, UA.Attack, UA.Idle],
         [UA.Rush, UA.GoBackward, UA.Heal],
