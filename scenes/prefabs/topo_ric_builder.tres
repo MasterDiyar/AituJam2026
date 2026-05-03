@@ -34,6 +34,7 @@ metadata/_custom_type_script = "uid://ds3wo1i33pg8r"
 script = ExtResource("11_enxyx")
 BulletResourceScene = ExtResource("9_2lnn6")
 Icon = ExtResource("10_1q8mg")
+Speed = 6.0
 Damage = 7.0
 LifeTime = 1.0
 Consume = 1.0
@@ -49,6 +50,7 @@ Count = 1
 isClose = true
 AttackDistance = 110.0
 SpawnOffset = 80.0
+AttackType = 2
 metadata/_custom_type_script = "uid://bpfif762meayr"
 
 [resource]

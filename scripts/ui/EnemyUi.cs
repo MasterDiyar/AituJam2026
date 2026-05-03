@@ -5,7 +5,7 @@ using AITUJAM2026.scripts.unit;
 public partial class EnemyUi : Control
 {
 	public string[] Names = [
-	"WanderBraun", "Wilhelm II", "Otto der Große", "Leon Torres", "Adolf Fides", "Fidel Barren", "Aleksander Vanz",
+	" WanderBraun", "  Wilhelm II", "Otto der Große", "Leon Torres", "Adolf Fides", "Fidel Barren", "Aleksander Vanz",
 	"Leon Frank", 
 	], Links = ["Matveh", "Josua", "Vladislav"];
 
@@ -25,6 +25,7 @@ public partial class EnemyUi : Control
 		moveTween = CreateTween();
         
 		Vector2 targetPos = toggler ? startPos : endPos;
+		Visible =  toggler;
 		
 		moveTween.TweenProperty(this, "position", targetPos, 0.5f)
 			.SetTrans(Tween.TransitionType.Back) 
@@ -41,5 +42,6 @@ public partial class EnemyUi : Control
 		NameLabel.Text = name;
 		Portrait.Texture = GD.Load<Texture2D>($"res://assets/texture/heads/{link}.png");
 		WorkingDeck.actions = actions;
+		WorkingDeck.cuntayner?.SetDecK();
 	}
 }

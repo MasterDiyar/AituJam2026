@@ -56,6 +56,7 @@ AttackSpeed = 2.5
 Count = 1
 AttackDistance = 350.0
 SpawnOffset = 30.0
+AttackType = 1
 metadata/_custom_type_script = "uid://bpfif762meayr"
 
 [resource]

@@ -5,6 +5,14 @@ namespace AITUJAM2026.scripts;
 
 public partial class Weapon : Node2D
 {
+    public enum AttackType
+    {
+        Pike,
+        Bow,
+        Sword
+    }
+
+    private AttackType type;
     [Export] private Unit Parent;
     [Export] public WeaponResource WeaponInstance;
 
@@ -19,7 +27,7 @@ public partial class Weapon : Node2D
     {
         if (attackTime < WeaponInstance.AttackSpeed) return;
         attackTime =  0.0f;
-        Parent.Body.OnAttack(angle, WeaponInstance.AttackDistance, WeaponInstance.AttackSpeed*0.66f, WeaponInstance.Bullet.SpawnAngle);
+        Parent.Body.OnAttack(angle, WeaponInstance.AttackDistance, WeaponInstance.AttackSpeed*0.66f, type, WeaponInstance.Bullet.SpawnAngle);
         for (int i = 0; i < WeaponInstance.Count; i++) {
             var bullet = WeaponInstance.Bullet.BulletResourceScene.Instantiate<Bullet>();
             bullet.BulletResource = WeaponInstance.Bullet;

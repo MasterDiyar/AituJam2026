@@ -60,8 +60,6 @@ timePerAction = 3.0
 [node name="TestControl" parent="." unique_id=273127478 instance=ExtResource("5_f2n00")]
 layout_mode = 1
 offset_left = -1920.0
-offset_top = 350.0
 offset_right = -1920.0
-offset_bottom = 350.0
 actions = Array[int]([])
 timePerAction = 5.0

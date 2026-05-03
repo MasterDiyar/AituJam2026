@@ -6,7 +6,7 @@ using Godot.Collections;
 
 public partial class Arena : Node2D
 {
-	readonly Vector2 _cityPosition = new Vector2(0, 800), _mobSpawnPosition = new (400, 100), _playerSpawnPosition = new (300, 850);
+	readonly Vector2 _cityPosition = new Vector2(0, 800), _mobSpawnPosition = new (800, 150), _playerSpawnPosition = new (700, 550);
 	
 	[Export] public Button StartFight;
 	[Export] public Camera2D camera;
@@ -68,12 +68,14 @@ public partial class Arena : Node2D
 		GameManager.Instance.Food += WinFood;
 		OneTimeUnits = [];
 		RemoveUnitFromArmy();
-		OnCity();
+		ToggleMove(true);
 	}
 
 	public void OnLoose()
 	{
 		
+		RemoveUnitFromArmy();
+		ToggleMove(true);
 	}
 	public void AfterInit()
 	{
@@ -96,8 +98,8 @@ public partial class Arena : Node2D
 				EnemyUnits.Add(unit);
 			}
 		}
-
 		_enemyUi.WorkingDeck.units = new Array<Unit>(EnemyUnits);
+		_enemyUi.WorkingDeck.timer.Start();
 	}
 
 	public void SpawnPlayerUnits()

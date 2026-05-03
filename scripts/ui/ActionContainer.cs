@@ -9,7 +9,6 @@ public partial class ActionContainer : HBoxContainer
 	public override void _Ready()
 	{
 		deck = GetParent<Deck>();
-		SetDecK();
 		deck.ActionChanged += OnActionChanged;
 	}
 
@@ -24,7 +23,7 @@ public partial class ActionContainer : HBoxContainer
 	}
 
 	
-	void SetDecK()
+	public void SetDecK()
 	{
 		
 		foreach (var act in deck.actions)

@@ -3,7 +3,11 @@
 [ext_resource type="Script" uid="uid://d1bti5w7lwj8q" path="res://scripts/unit/Deck.cs" id="1_fateh"]
 [ext_resource type="Script" uid="uid://bto1pmip21pjv" path="res://scripts/test/TestControll.cs" id="2_6jk0j"]
 [ext_resource type="FontFile" uid="uid://dwwy72kh06k47" path="res://assets/fonts/Darinia/Darinia.ttf" id="2_nretf"]
+[ext_resource type="Texture2D" uid="uid://5010f482803f" path="res://assets/ui/closed_foliant.png" id="3_jl3uv"]
 [ext_resource type="Texture2D" uid="uid://cwlpheeiqm7tk" path="res://assets/ui/foliant.png" id="3_vc1ir"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hmtru"]
+texture = ExtResource("3_jl3uv")
 
 [node name="TestControl" type="Control" unique_id=273127478 node_paths=PackedStringArray("units")]
 layout_mode = 3
@@ -25,7 +29,10 @@ offset_bottom = 1070.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0.13352576, 0.14706504, 0.1504496, 1)
 theme_override_colors/font_pressed_color = Color(0.19434929, 0.19434926, 0.19434926, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 0)
 theme_override_fonts/font = ExtResource("2_nretf")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_hmtru")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_hmtru")
 text = "for
 ward"
 icon = ExtResource("3_vc1ir")
@@ -45,7 +52,10 @@ offset_bottom = 1070.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0.13352576, 0.14706504, 0.1504496, 1)
 theme_override_colors/font_pressed_color = Color(0.19434929, 0.19434926, 0.19434926, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 0)
 theme_override_fonts/font = ExtResource("2_nretf")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_hmtru")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_hmtru")
 text = "back
 ward"
 icon = ExtResource("3_vc1ir")
@@ -65,7 +75,10 @@ offset_bottom = 1070.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0.13352576, 0.14706504, 0.1504496, 1)
 theme_override_colors/font_pressed_color = Color(0.19434929, 0.19434926, 0.19434926, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 0)
 theme_override_fonts/font = ExtResource("2_nretf")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_hmtru")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_hmtru")
 text = "attack"
 icon = ExtResource("3_vc1ir")
 flat = true
@@ -84,7 +97,10 @@ offset_bottom = 1070.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0.13352576, 0.14706504, 0.1504496, 1)
 theme_override_colors/font_pressed_color = Color(0.19434929, 0.19434926, 0.19434926, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 0)
 theme_override_fonts/font = ExtResource("2_nretf")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_hmtru")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_hmtru")
 text = "heal"
 icon = ExtResource("3_vc1ir")
 flat = true

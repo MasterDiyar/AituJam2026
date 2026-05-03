@@ -10,6 +10,8 @@ public partial class Deck : Node
     [Export] public Godot.Collections.Array<Unit> units;
     [Export] public Godot.Collections.Array<UnitActions> actions;
     [Export] public float timePerAction;
+    [Export] public ActionContainer cuntayner;
+    public Timer timer;
     
     public int currentAction = 0;
     public Action<int> ActionChanged;
@@ -21,17 +23,16 @@ public partial class Deck : Node
             unit.UnitFaction = team;
         }
         
-        Timer timer = new Timer();
+        timer = new Timer();
         AddChild(timer);
         timer.WaitTime = timePerAction;
-        timer.Start();
         timer.Timeout += TimerOnTimeout;
-        
-        if (actions.Count ==0) actions.Add(UnitActions.Idle);
+        //if (actions.Count ==0) actions.Add(UnitActions.Idle);
     }
 
     private void TimerOnTimeout()
     {
+        if (actions.Count == 0 || actions == null) return;
         currentAction = (currentAction + 1) % actions.Count;
         SetAction(actions[currentAction]);
         ActionChanged?.Invoke(currentAction);

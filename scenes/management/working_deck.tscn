@@ -9,13 +9,13 @@
 [ext_resource type="Texture2D" uid="uid://6eu0ok2erh0i" path="res://assets/texture/order/Backward.png" id="7_qqcao"]
 [ext_resource type="Texture2D" uid="uid://dnolfv4d7g3pr" path="res://assets/texture/order/Rush.png" id="8_wcgrq"]
 
-[node name="WorkingDeck" type="Control" unique_id=250504512 node_paths=PackedStringArray("units")]
+[node name="WorkingDeck" type="Control" unique_id=250504512 node_paths=PackedStringArray("units", "cuntayner")]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_g50ai")
 units = []
-actions = Array[int]([0, 4, 2])
 timePerAction = 1.0
+cuntayner = NodePath("HBoxContainer")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1785348634]
 layout_mode = 0

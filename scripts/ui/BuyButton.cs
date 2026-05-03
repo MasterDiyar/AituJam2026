@@ -25,7 +25,7 @@ public partial class BuyButton : Button
 
 	private void OnPressed()
 	{
-		if (GameManager.Instance.Money <= price) return;
+		if (GameManager.Instance.Money < price) return;
 		switch (pressAction)
 		{
 			case PressAction.Tent:

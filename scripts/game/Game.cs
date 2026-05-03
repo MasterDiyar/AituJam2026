@@ -51,11 +51,11 @@ public partial class Game : Node2D
 	{
 		if (enemyUnitCount == 0)
 		{
-			
+			Arena.OnWin();
 		}
 		else if (playerUnitCount == 0)
 		{
-			
+			Arena.OnLoose();
 		}
 	}
 }

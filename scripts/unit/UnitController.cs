@@ -1,33 +1,61 @@
-﻿using Godot;
+﻿using System.Collections.Generic;
+using System.Linq;
+using Godot;
 using AITUJAM2026.scripts.unit;
 
 namespace AITUJAM2026.scripts.unit;
 
 public partial class UnitController : Node2D
 {
-    [Export] public float SearchRadius = 200f;
+    [Export] public float  SearchRadius = 200f;
     [Export] public Area2D Eyes;
     public UnitActions UnitAction { get; private set; }
-    private Unit Parent, closestEnemy;
-
-    private int _absolut = 1;
-    private float _acceleration = 10.0f;
-    private Vector2 _facing = Vector2.Up;
-    private Vector2 _targetVelocity;
-
+    
+    private Unit Parent, _closestEnemy;
+    private int        _absolut = 1;
+    private float      _acceleration = 10.0f;
+    private Vector2    _facing = Vector2.Up;
+    private Vector2    _targetVelocity;
+    private List<Unit> _enemiesInRange = [];
     public override void _Ready()
     {
         Parent = GetParent<Unit>();
         ((CircleShape2D)Eyes.GetChild<CollisionShape2D>(0).Shape).Radius = SearchRadius;
         Eyes.BodyEntered += OnEyeEntered;
+        Eyes.BodyExited += OnEyeExited;
     }
 
     private void OnEyeEntered(Node2D body)
     {
-        if (body is not Unit unit) return;
-        if (unit.UnitFaction == Parent.UnitFaction) return;
-            
-        closestEnemy = unit;
+        if (body is Unit unit && unit.UnitFaction != Parent.UnitFaction)
+            _enemiesInRange.Add(unit);
+        
+    }
+
+    private void OnEyeExited(Node2D body)
+    {
+        if (body is Unit unit)
+            _enemiesInRange.Remove(unit);
+    }
+    
+    public override void _Process(double delta)
+    {
+        UpdateClosestEnemy();
+    }
+
+    private void UpdateClosestEnemy()
+    {
+        _enemiesInRange.RemoveAll(u => !IsInstanceValid(u));
+
+        if (_enemiesInRange.Count == 0)
+        {
+            _closestEnemy = null;
+            return;
+        }
+
+        _closestEnemy = _enemiesInRange
+            .OrderBy(u => Parent.GlobalPosition.DistanceSquaredTo(u.GlobalPosition))
+            .FirstOrDefault();
     }
 
     public void Act(UnitActions newAction)
@@ -63,8 +91,8 @@ public partial class UnitController : Node2D
     public override void _PhysicsProcess(double delta)
     {
         var dt = (float)delta;
-        if (closestEnemy != null && !IsInstanceValid(closestEnemy))
-            closestEnemy = null;
+        if (_closestEnemy != null && !IsInstanceValid(_closestEnemy))
+            _closestEnemy = null;
         
 
         switch (UnitAction) {
@@ -109,17 +137,17 @@ public partial class UnitController : Node2D
 
     private void ProcessAttack(float dt)
     {
-        if (closestEnemy != null && IsInstanceValid(closestEnemy)) {
-            float distanceToEnemy = Parent.GlobalPosition.DistanceTo(closestEnemy.GlobalPosition);
+        if (_closestEnemy != null && IsInstanceValid(_closestEnemy)) {
+            float distanceToEnemy = Parent.GlobalPosition.DistanceTo(_closestEnemy.GlobalPosition);
             float attackDistance = Parent.Weapon.WeaponInstance.AttackDistance;
 
             if (distanceToEnemy > attackDistance) {
-                Vector2 direction = (closestEnemy.GlobalPosition - Parent.GlobalPosition).Normalized();
+                Vector2 direction = (_closestEnemy.GlobalPosition - Parent.GlobalPosition).Normalized();
                 _targetVelocity = direction * Parent.MaxSpeed;
                 Parent.Velocity = Parent.Velocity.Lerp(_targetVelocity, _acceleration * dt);
             }else {
                 StopMoving(dt);
-                Parent.Weapon.Execute(closestEnemy);
+                Parent.Weapon.Execute(_closestEnemy);
             }
         }
         else
@@ -129,7 +157,7 @@ public partial class UnitController : Node2D
 
     private void ProcessRush(float dt)
     {
-        if (closestEnemy != null && IsInstanceValid(closestEnemy))
+        if (_closestEnemy != null && IsInstanceValid(_closestEnemy))
             ProcessAttack(dt);
         else ProcessMovement(dt);
         
