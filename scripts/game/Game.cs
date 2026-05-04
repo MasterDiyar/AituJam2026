@@ -9,6 +9,12 @@ public partial class Game : Node2D
 	public PauseUi pauseUi;
 	public Arena Arena;
 	public AudioStreamPlayer Audio;
+	public AudioStream[] PlayList = [
+		GD.Load<AudioStream>("res://assets/audio/negizgikuey.ogg"),
+		GD.Load<AudioStream>("res://assets/audio/sogysbir.ogg"),
+		GD.Load<AudioStream>("res://assets/audio/sogyseki.ogg"),
+		GD.Load<AudioStream>("res://assets/audio/oelim.ogg"),
+	];
 	
 	public int enemyUnitCount = 0, playerUnitCount = 0;
 	public override void _Ready()
@@ -22,13 +28,15 @@ public partial class Game : Node2D
 		GameManager.Instance.NoDestroy =  NoDestroy;
 		GameManager.Instance.UI = UI;
 		GameManager.Instance.PauseUI = pauseUi;
-		
+		GameManager.Instance.Game = this;
+
 	}
 
 	public void AfterInit()
 	{
 		Arena.StartFight = UI.GetNode<Button>("StartFightButton");
 		GameManager.Instance.Arena = Arena;
+		
 	}
 
 	public override void _Input(InputEvent @event)

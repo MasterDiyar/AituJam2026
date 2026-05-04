@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://d2xm4ij02t4h7"]
 
 [ext_resource type="Script" uid="uid://qykrrfi2iu6o" path="res://scripts/ui/Menu.cs" id="1_ca7bl"]
+[ext_resource type="AudioStream" uid="uid://cbwhnvurfijf5" path="res://assets/audio/sword.mp3" id="2_gejb1"]
+[ext_resource type="AudioStream" uid="uid://vhdgqdbrxjrw" path="res://assets/audio/mazir.mp3" id="2_hqxb8"]
 
 [node name="Menu" type="Control" unique_id=51166997 node_paths=PackedStringArray("PlayButton")]
 layout_mode = 3
@@ -20,3 +22,11 @@ offset_right = 197.0
 offset_bottom = 114.0
 text = "Play
 "
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Button" unique_id=1564159735]
+stream = ExtResource("2_gejb1")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1895007953]
+stream = ExtResource("2_hqxb8")
+volume_db = -20.8
+autoplay = true

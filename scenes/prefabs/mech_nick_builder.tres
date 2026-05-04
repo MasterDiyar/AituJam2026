@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://ye5518wgslml" path="res://scenes/unit/bullet.tscn" id="9_re1ya"]
 [ext_resource type="Texture2D" uid="uid://bm4p5rlfkilfg" path="res://assets/texture/mobs/swing.png" id="10_mpjex"]
 [ext_resource type="Script" uid="uid://c4ypseweqfmmv" path="res://scripts/resources/BulletResource.cs" id="11_ot7q0"]
+[ext_resource type="AudioStream" uid="uid://cbwhnvurfijf5" path="res://assets/audio/sword.mp3" id="12_2xieo"]
 [ext_resource type="Script" uid="uid://bpfif762meayr" path="res://scripts/resources/WeaponResource.cs" id="12_sqfiq"]
 
 [sub_resource type="Resource" id="Resource_115aj"]
@@ -53,6 +54,7 @@ isClose = true
 AttackDistance = 150.0
 SpawnOffset = 64.0
 AttackType = 2
+Sound = ExtResource("12_2xieo")
 metadata/_custom_type_script = "uid://bpfif762meayr"
 
 [resource]

@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://ye5518wgslml" path="res://scenes/unit/bullet.tscn" id="9_2lnn6"]
 [ext_resource type="Texture2D" uid="uid://bm4p5rlfkilfg" path="res://assets/texture/mobs/swing.png" id="10_1q8mg"]
 [ext_resource type="Script" uid="uid://c4ypseweqfmmv" path="res://scripts/resources/BulletResource.cs" id="11_enxyx"]
+[ext_resource type="AudioStream" uid="uid://c0quys8lblct0" path="res://assets/audio/halberd.mp3" id="12_2lnn6"]
 
 [sub_resource type="Resource" id="Resource_7pe7a"]
 script = ExtResource("2_vbrow")
@@ -51,6 +52,7 @@ isClose = true
 AttackDistance = 110.0
 SpawnOffset = 80.0
 AttackType = 2
+Sound = ExtResource("12_2lnn6")
 metadata/_custom_type_script = "uid://bpfif762meayr"
 
 [resource]

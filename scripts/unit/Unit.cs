@@ -46,8 +46,12 @@ public partial class Unit : CharacterBody2D, IDamagable
 
     public override void _Process(double delta)
     {
-        Audio.VolumeDb = GameManager.Instance.Game.Audio.VolumeDb;
-        Audio.Playing = (Velocity.Length() > 0.3f);
+        Audio.VolumeDb = GameManager.Instance.Game.Audio.GetVolumeDb();
+        switch (Velocity.Length() > 0.3f) {
+            case true when !Audio.Playing: Audio.Play(); break;
+            case false when Audio.Playing: Audio.Stop(); break;
+        }
+        
     }
 
     public void ExecuteDeath()

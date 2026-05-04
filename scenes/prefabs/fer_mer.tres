@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bntdlw7idxtb" path="res://assets/texture/mobs/PitchSwing.png" id="10_ny02e"]
 [ext_resource type="Script" uid="uid://c4ypseweqfmmv" path="res://scripts/resources/BulletResource.cs" id="10_ylf0v"]
 [ext_resource type="Script" uid="uid://bpfif762meayr" path="res://scripts/resources/WeaponResource.cs" id="11_qo1e0"]
+[ext_resource type="AudioStream" uid="uid://hq6ubiydxe0w" path="res://assets/audio/fork.mp3" id="12_mulyn"]
 
 [sub_resource type="Resource" id="Resource_mulyn"]
 script = ExtResource("2_ny02e")
@@ -69,6 +70,7 @@ AttackSpeed = 1.0
 Count = 1
 AttackDistance = 90.0
 SpawnOffset = 30.0
+Sound = ExtResource("12_mulyn")
 metadata/_custom_type_script = "uid://bpfif762meayr"
 
 [resource]

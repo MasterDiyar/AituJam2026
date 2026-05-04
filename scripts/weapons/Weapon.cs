@@ -26,7 +26,7 @@ public partial class Weapon : Node2D
 
     public void Execute(float angle)
     {
-        Audio.VolumeDb = GameManager.Instance.Game.Audio.VolumeDb;
+        Audio.VolumeDb = GameManager.Instance.Game.Audio.GetVolumeDb();
         
         type = WeaponInstance.AttackType;
         if (attackTime < WeaponInstance.AttackSpeed) return;

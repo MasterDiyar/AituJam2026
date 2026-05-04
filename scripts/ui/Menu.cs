@@ -11,6 +11,8 @@ public partial class Menu : Control
 
 	void OnPlay()
 	{
+		GetNode<AudioStreamPlayer>("Button/AudioStreamPlayer").Play();
+		GetNode<AudioStreamPlayer>("AudioStreamPlayer").Stop();
 		var scene =  GD.Load<PackedScene>("res://scenes/management/game.tscn").Instantiate<Game>();
 		var arena = GD.Load<PackedScene>("res://scenes/maps/arena.tscn").Instantiate<Arena>();
 		

@@ -8,12 +8,13 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fvc8g"]
 
-[node name="Unit" type="CharacterBody2D" unique_id=1833189167 node_paths=PackedStringArray("Body", "Controller", "Weapon")]
+[node name="Unit" type="CharacterBody2D" unique_id=1833189167 node_paths=PackedStringArray("Body", "Controller", "Weapon", "Audio")]
 input_pickable = true
 script = ExtResource("1_fmv3f")
 Body = NodePath("UnitBody")
 Controller = NodePath("UnitControl")
 Weapon = NodePath("Weapon")
+Audio = NodePath("AudioStreamPlayer2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1235134425]
 shape = SubResource("CapsuleShape2D_fvc8g")

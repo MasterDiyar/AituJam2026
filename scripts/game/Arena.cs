@@ -55,6 +55,8 @@ public partial class Arena : Node2D
 		
 		WinCoins = Mathf.Pow(Level, 2);
 		WinFood = Mathf.Pow(Level, 2)-Level*2;
+		GameManager.Instance.Game.Audio.Stream = GameManager.Instance.Game.PlayList[GD.RandRange(1,2)];
+		GameManager.Instance.Game.Audio.Play();
 	}
 
 	public void OnCity()
@@ -75,6 +77,27 @@ public partial class Arena : Node2D
 	public void OnLoose()
 	{
 		WarEnd();
+		var audio = GameManager.Instance.Game.Audio;
+		var playList = GameManager.Instance.Game.PlayList;
+		float prevVolume = audio.VolumeDb;
+
+		_tween?.Kill();
+		_tween = CreateTween();
+
+		_tween.TweenProperty(audio, "volume_db", -80f, 0.5f);
+		_tween.TweenCallback(Callable.From(() => {
+			audio.Stream = playList[1]; 
+			audio.VolumeDb = prevVolume;
+			audio.Play();
+		}));
+
+		_tween.TweenInterval(3);
+		_tween.TweenProperty(audio, "volume_db", -80f, 1.5f);
+		_tween.TweenCallback(Callable.From(() => {
+			audio.Stream = playList[0];
+			audio.Play();
+		}));
+		_tween.TweenProperty(audio, "volume_db", prevVolume, 2.0f);
 	}
 
 	void WarEnd()
@@ -84,6 +107,7 @@ public partial class Arena : Node2D
 		wheat2.Disabled = false;
 		RemoveUnitFromArmy();
 		ToggleMove(true);
+		
 	}
 	public void AfterInit()
 	{
@@ -95,6 +119,8 @@ public partial class Arena : Node2D
 		wheat2 = GetNode<Button>("grass/WindMill2/Button2");
 		wheat1.Pressed += () => OnTaxesGet(wheat1);
 		wheat2.Pressed += () => OnTaxesGet(wheat2);
+		GameManager.Instance.Game.Audio.Stream = GameManager.Instance.Game.PlayList[0];
+		GameManager.Instance.Game.Audio.Play();
 	}
 
 
