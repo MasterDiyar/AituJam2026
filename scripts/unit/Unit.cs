@@ -51,7 +51,8 @@ public partial class Unit : CharacterBody2D, IDamagable
             case true when !Audio.Playing: Audio.Play(); break;
             case false when Audio.Playing: Audio.Stop(); break;
         }
-        
+        if (Position.Y > 1050) Position = new Vector2(Position.X, 1050);
+        if (Position.Y < 30) Position = new Vector2(Position.X, 30);
     }
 
     public void ExecuteDeath()

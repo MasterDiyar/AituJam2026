@@ -16,7 +16,7 @@ public partial class ActionContainer : HBoxContainer
 
 	void OnActionChanged(int num)
 	{
-		curr?.Hide();
+		if (IsInstanceValid(curr)) curr?.Hide();
 		var a =GetChild<Control>(num);
 		curr = a.GetChild<TextureRect>(0);
 		curr.Show();
@@ -25,6 +25,9 @@ public partial class ActionContainer : HBoxContainer
 	
 	public void SetDecK()
 	{
+		foreach (var VARIABLE in GetChildren())
+			VARIABLE.QueueFree();
+		
 		
 		foreach (var act in deck.actions)
 		{

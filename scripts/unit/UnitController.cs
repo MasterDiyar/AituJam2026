@@ -20,7 +20,7 @@ public partial class UnitController : Node2D
     public override void _Ready()
     {
         Parent = GetParent<Unit>();
-        ((CircleShape2D)Eyes.GetChild<CollisionShape2D>(0).Shape).Radius = SearchRadius;
+        ((CircleShape2D)Eyes.GetChild<CollisionShape2D>(0).Shape).Radius = Mathf.Max(SearchRadius, Parent.Weapon.WeaponInstance.AttackDistance);
         Eyes.BodyEntered += OnEyeEntered;
         Eyes.BodyExited += OnEyeExited;
     }
@@ -159,7 +159,7 @@ public partial class UnitController : Node2D
     {
         if (_closestEnemy != null && IsInstanceValid(_closestEnemy))
             ProcessAttack(dt);
-        else ProcessMovement(dt);
+        else ProcessMovement(2*dt);
         
     }
 

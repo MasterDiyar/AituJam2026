@@ -10,10 +10,12 @@ config_version=5
 
 [application]
 
-config/name="AITUJAM2026"
+config/name="Command&Conquer"
+config/version="CL1"
 run/main_scene="uid://d2xm4ij02t4h7"
 config/features=PackedStringArray("4.6", "C#", "Forward Plus")
-config/icon="res://icon.svg"
+boot_splash/image="uid://bbdjloqkvdpx5"
+config/icon="uid://5010f482803f"
 
 [autoload]
 

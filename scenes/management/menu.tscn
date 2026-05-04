@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://d0gkccluj0xid" path="res://assets/ui/menu.png" id="2_q6pk1"]
 [ext_resource type="FontFile" uid="uid://dwwy72kh06k47" path="res://assets/fonts/Darinia/Darinia.ttf" id="3_ouw2q"]
 [ext_resource type="Texture2D" uid="uid://b08fogu2itvh4" path="res://assets/ui/button.png" id="4_ko3y8"]
+[ext_resource type="Texture2D" uid="uid://bbdjloqkvdpx5" path="res://assets/logo.png" id="6_ouw2q"]
 
 [node name="Menu" type="Control" unique_id=51166997 node_paths=PackedStringArray("PlayButton")]
 layout_mode = 3
@@ -41,6 +42,10 @@ expand_icon = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Button" unique_id=1564159735]
 stream = ExtResource("2_gejb1")
+
+[node name="Logo" type="Sprite2D" parent="Button" unique_id=1474199591]
+position = Vector2(116, -318)
+texture = ExtResource("6_ouw2q")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1895007953]
 stream = ExtResource("2_hqxb8")

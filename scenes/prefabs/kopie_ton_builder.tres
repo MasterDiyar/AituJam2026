@@ -58,9 +58,9 @@ load_path = "res://.godot/imported/PikeSwing.png-2cca3420078a25ae402483c8ee34899
 script = ExtResource("5_yjxke")
 BulletResourceScene = SubResource("PackedScene_3hlbk")
 Icon = SubResource("CompressedTexture2D_3hlbk")
-Speed = 60.0
+Speed = 70.0
 Damage = 5.0
-LifeTime = 0.785
+LifeTime = 0.5
 SpawnAngle = 0.785
 metadata/_custom_type_script = "uid://c4ypseweqfmmv"
 
@@ -70,8 +70,8 @@ Bullet = SubResource("Resource_6usux")
 Damage = 5.0
 AttackSpeed = 2.0
 Count = 1
-AttackDistance = 80.0
-SpawnOffset = 30.0
+AttackDistance = 75.0
+SpawnOffset = 35.0
 Sound = ExtResource("11_afx8i")
 metadata/_custom_type_script = "uid://bpfif762meayr"
 

@@ -15,6 +15,8 @@ public partial class Game : Node2D
 		GD.Load<AudioStream>("res://assets/audio/sogyseki.ogg"),
 		GD.Load<AudioStream>("res://assets/audio/oelim.ogg"),
 	];
+
+	public float MaxVolume = -25, MinVolume = -110;
 	
 	public int enemyUnitCount = 0, playerUnitCount = 0;
 	public override void _Ready()
@@ -55,6 +57,7 @@ public partial class Game : Node2D
 			if (uit.UnitFaction == Faction.Enemy) enemyUnitCount++;
 			if (uit.UnitFaction == Faction.Player) playerUnitCount++;
 		}
+		GD.Print($"Enemy count:{enemyUnitCount} || Player count:{playerUnitCount}");
 	}
 
 	public bool isGameOver = false; 
@@ -63,11 +66,16 @@ public partial class Game : Node2D
 	{
 		if (isGameOver) return;
 
-		if (enemyUnitCount <= 0) {
+		if (enemyUnitCount <= 0)
+		{
+			enemyUnitCount = 0;
+			playerUnitCount = 0;
 			isGameOver = true;
 			Arena.OnWin();
 		}
 		else if (playerUnitCount <= 0) {
+			enemyUnitCount = 0;
+			playerUnitCount = 0;
 			isGameOver = true;
 			Arena.OnLoose();
 		}

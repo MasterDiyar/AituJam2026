@@ -16,7 +16,7 @@ public partial class PauseUi : Control
 	void ToggleSound()
 	{
 		isSoundOn = !isSoundOn;
-		GameManager.Instance.Game.Audio.VolumeDb = isSoundOn ? -90 : -25;
+		GameManager.Instance.Game.Audio.VolumeDb = isSoundOn ? -110 : -25;
 	}
 
 	void ReturnToGame()

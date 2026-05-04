@@ -9,8 +9,8 @@ public partial class WorseChooser : Control
 	public override void _Ready()
 	{
 		pitch.Pressed += () => SelectUnit(Decks.farmberg, 0);
-		kopie.Pressed += () => SelectUnit(Decks.farmberg, 1);
-		zei.Pressed += () => SelectUnit(Decks.farmberg, 2);
+		kopie.Pressed += () => SelectUnit(Decks.kopie_ton, 1);
+		zei.Pressed += () => SelectUnit(Decks.zweih_an, 2);
 	}
 	
 	private void SelectUnit(UnitBuilder builder, int i)
@@ -18,7 +18,6 @@ public partial class WorseChooser : Control
 		if (GameManager.Instance.Food < price[i]) return;
 		GameManager.Instance.Food  -= price[i];
 		GameManager.Instance.Arena.AddUnitToArmy(builder, false);
-		QueueFree();
 	}
 
 	

@@ -26,13 +26,16 @@ public static class Decks
         [UA.Attack, UA.Heal, UA.GoForward, UA.Attack, UA.GoBackward],
         [UA.GoForward, UA.Attack],
         [UA.Attack, UA.Heal],
-        [UA.Rush, UA.GoBackward]
+        [UA.Rush, UA.GoBackward],
+        [UA.GoForward, UA.Rush, UA.GoForward]
     ];
     
     public static readonly Godot.Collections.Array<UnitBuilder>[] PreMadeUnitDecks= [
         [WithCount(kopie_ton, 4)], 
         [WithCount(bowm_an, 2), WithCount(kopie_ton, 3)],
         [WithCount(bowm_an, 3), WithCount(topo_ric, 3)],
-        [WithCount(topo_ric, 5), WithCount(mech_nick, 4)]
+        [WithCount(topo_ric, 5), WithCount(mech_nick, 4)],
+        [WithCount(farmberg, 4), WithCount(farmberg, 4), WithCount(farmberg, 4), WithCount(farmberg, 4)],
+        [WithCount(bowm_an, 6),WithCount(zweih_an, 3)]
     ];
 }

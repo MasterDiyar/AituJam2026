@@ -18,7 +18,7 @@ public partial class Arena : Node2D
 
 	private EnemyUi _enemyUi;
 	private Deck _testDeck;
-	private Tween _tween;
+	private Tween _tween, _tweenAudio;
 
 	private Button wheat1, wheat2;
 	
@@ -43,6 +43,7 @@ public partial class Arena : Node2D
 
 	public void OnAttack()
 	{
+		_tweenAudio?.Kill();
 		string  randomName = _enemyUi.Names[GD.RandRange(0, _enemyUi.Names.Length-1)], 
 				randomLink = _enemyUi.Links[GD.RandRange(0, _enemyUi.Links.Length-1)];
 		var randomActions = Decks.PreMadeActions[GD.RandRange(0, Decks.PreMadeActions.Length-1)];
@@ -57,7 +58,9 @@ public partial class Arena : Node2D
 		WinFood = Mathf.Pow(Level, 2)-Level*2;
 		GameManager.Instance.Game.Audio.Stream = GameManager.Instance.Game.PlayList[GD.RandRange(1,2)];
 		GameManager.Instance.Game.Audio.Play();
+		GameManager.Instance.Game.Audio.VolumeDb = prevVolume;
 		GameManager.Instance.Game.isGameOver = false;
+		GameManager.Instance.Game.StartFight();
 	}
 
 	public void OnCity()
@@ -75,30 +78,31 @@ public partial class Arena : Node2D
 		WarEnd();
 	}
 
+	private float prevVolume;
 	public void OnLoose()
 	{
 		WarEnd();
 		var audio = GameManager.Instance.Game.Audio;
 		var playList = GameManager.Instance.Game.PlayList;
-		float prevVolume = audio.VolumeDb;
+		prevVolume = audio.VolumeDb;
 
-		_tween?.Kill();
-		_tween = CreateTween();
+		_tweenAudio?.Kill();
+		_tweenAudio = CreateTween();
 
-		_tween.TweenProperty(audio, "volume_db", -80f, 0.5f);
-		_tween.TweenCallback(Callable.From(() => {
-			audio.Stream = playList[1]; 
+		_tweenAudio.TweenProperty(audio, "volume_db", -80f, 0.5f);
+		_tweenAudio.TweenCallback(Callable.From(() => {
+			audio.Stream = playList[3]; 
 			audio.VolumeDb = prevVolume;
 			audio.Play();
 		}));
 
-		_tween.TweenInterval(3);
-		_tween.TweenProperty(audio, "volume_db", -80f, 1.5f);
-		_tween.TweenCallback(Callable.From(() => {
+		_tweenAudio.TweenInterval(12);
+		_tweenAudio.TweenProperty(audio, "volume_db", -80f, 1.5f);
+		_tweenAudio.TweenCallback(Callable.From(() => {
 			audio.Stream = playList[0];
 			audio.Play();
 		}));
-		_tween.TweenProperty(audio, "volume_db", prevVolume, 2.0f);
+		_tweenAudio.TweenProperty(audio, "volume_db", prevVolume, 2.0f);
 	}
 
 	void WarEnd()
@@ -122,6 +126,7 @@ public partial class Arena : Node2D
 		wheat2.Pressed += () => OnTaxesGet(wheat2);
 		GameManager.Instance.Game.Audio.Stream = GameManager.Instance.Game.PlayList[0];
 		GameManager.Instance.Game.Audio.Play();
+		prevVolume = GameManager.Instance.Game.Audio.VolumeDb;
 	}
 
 
