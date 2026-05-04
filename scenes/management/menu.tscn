@@ -3,6 +3,9 @@
 [ext_resource type="Script" uid="uid://qykrrfi2iu6o" path="res://scripts/ui/Menu.cs" id="1_ca7bl"]
 [ext_resource type="AudioStream" uid="uid://cbwhnvurfijf5" path="res://assets/audio/sword.mp3" id="2_gejb1"]
 [ext_resource type="AudioStream" uid="uid://vhdgqdbrxjrw" path="res://assets/audio/mazir.mp3" id="2_hqxb8"]
+[ext_resource type="Texture2D" uid="uid://d0gkccluj0xid" path="res://assets/ui/menu.png" id="2_q6pk1"]
+[ext_resource type="FontFile" uid="uid://dwwy72kh06k47" path="res://assets/fonts/Darinia/Darinia.ttf" id="3_ouw2q"]
+[ext_resource type="Texture2D" uid="uid://b08fogu2itvh4" path="res://assets/ui/button.png" id="4_ko3y8"]
 
 [node name="Menu" type="Control" unique_id=51166997 node_paths=PackedStringArray("PlayButton")]
 layout_mode = 3
@@ -14,14 +17,27 @@ grow_vertical = 2
 script = ExtResource("1_ca7bl")
 PlayButton = NodePath("Button")
 
+[node name="Menu" type="Sprite2D" parent="." unique_id=1088518810]
+texture = ExtResource("2_q6pk1")
+centered = false
+
 [node name="Button" type="Button" parent="." unique_id=1613786208]
+texture_filter = 3
 layout_mode = 0
-offset_left = 88.0
-offset_top = 78.0
-offset_right = 197.0
-offset_bottom = 114.0
+offset_left = 855.0
+offset_top = 714.0
+offset_right = 1130.0
+offset_bottom = 851.0
+theme_override_colors/font_color = Color(0.2, 0.050980393, 0.12156863, 1)
+theme_override_colors/font_focus_color = Color(0.30980393, 0.101960786, 0.11372549, 1)
+theme_override_fonts/font = ExtResource("3_ouw2q")
+theme_override_font_sizes/font_size = 48
 text = "Play
 "
+icon = ExtResource("4_ko3y8")
+flat = true
+icon_alignment = 1
+expand_icon = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Button" unique_id=1564159735]
 stream = ExtResource("2_gejb1")

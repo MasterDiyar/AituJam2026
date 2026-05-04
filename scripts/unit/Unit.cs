@@ -56,7 +56,7 @@ public partial class Unit : CharacterBody2D, IDamagable
 
     public void ExecuteDeath()
     {
-        var gay = GetParent().GetParent<Game>();
+        var gay = GameManager.Instance.Game;
         if (UnitFaction == Faction.Enemy) gay.enemyUnitCount--;
         if (UnitFaction == Faction.Player) gay.playerUnitCount--;
         gay.OneDie();

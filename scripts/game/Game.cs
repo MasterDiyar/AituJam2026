@@ -57,12 +57,18 @@ public partial class Game : Node2D
 		}
 	}
 
+	public bool isGameOver = false; 
+
 	public void OneDie()
 	{
-		if (enemyUnitCount == 0) {
+		if (isGameOver) return;
+
+		if (enemyUnitCount <= 0) {
+			isGameOver = true;
 			Arena.OnWin();
 		}
-		else if (playerUnitCount == 0) {
+		else if (playerUnitCount <= 0) {
+			isGameOver = true;
 			Arena.OnLoose();
 		}
 	}

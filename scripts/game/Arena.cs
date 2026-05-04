@@ -57,6 +57,7 @@ public partial class Arena : Node2D
 		WinFood = Mathf.Pow(Level, 2)-Level*2;
 		GameManager.Instance.Game.Audio.Stream = GameManager.Instance.Game.PlayList[GD.RandRange(1,2)];
 		GameManager.Instance.Game.Audio.Play();
+		GameManager.Instance.Game.isGameOver = false;
 	}
 
 	public void OnCity()
